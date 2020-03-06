@@ -13,15 +13,15 @@ public class Vehicle
 	/**
 	 *  the default size of a truck
 	 */
-	public final static int TRUCK=3;
+	public final static int TRUCK_SIZE=3;
 	/**
 	 *  the default size of a normal car
 	 */
-	public final static int DEFAULTSIZE=2;
+	public final static int DEFAULT_SIZE=2;
 	/**
 	 *  the default size of bike
 	 */
-	public final static int BIKE=1;
+	public final static int BIKE_SIZE=1;
 	
 	/**
 	 *	the size of the car 
@@ -33,7 +33,7 @@ public class Vehicle
 	 */
 	public Vehicle()
 	{
-		this.size=Vehicle.DEFAULTSIZE;
+		this.size=Vehicle.DEFAULT_SIZE;
 	}
 	/**
 	 *	the constructor with an size parameter
