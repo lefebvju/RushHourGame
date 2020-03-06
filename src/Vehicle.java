@@ -1,15 +1,17 @@
 
 /**
  * 
+ * the  
+ *  
  * @author sylvesad
  * 
  *
  */
 
-public class Car 
+public class Vehicle 
 {
 	/**
-	 *  
+	 *   the default size of a normal car
 	 */
 	public final static int DEFAULTSIZE=2;
 	
@@ -21,9 +23,9 @@ public class Car
 	/**
 	 * 
 	 */
-	public Car()
+	public Vehicle()
 	{
-		this.size=Car.DEFAULTSIZE;
+		this.size=Vehicle.DEFAULTSIZE;
 	}
 	
 }

@@ -1,7 +1,7 @@
 /**
  * 
  * @author sylvesad
- *	The map
+ *	The carpark
  */
 public class Map {
 
