@@ -44,22 +44,22 @@ public class Vehicle
 	 */
 	private final String name;
 	
-	/**
-	 *  the constructor without parameter = create an normal car 
-	 */
-	public Vehicle()
-	{
-		this.size=Vehicle.DEFAULT_SIZE;
-	}
-	/**
-	 *	the constructor with an size parameter
-	 * @param s = Size of the vehicle that you want
-	 */
-	public Vehicle(int s)
-	{
-		this.size=s;
-	}
 	
+	/**
+	 * constructor with parameter
+	 * @param name 
+	 * @param x
+	 * @param y
+	 * @param dir
+	 */
+	public Vehicle(String name,int x, int y,char dir)
+	{
+		this.dir=dir;
+		this.x=x;
+		this.y=y;
+		this.size=Vehicle.DEFAULT_SIZE;
+		this.name=name;
+	}
 	
 	/**
 	 * @return the size of vehicle
