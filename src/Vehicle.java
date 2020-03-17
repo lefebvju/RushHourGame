@@ -38,7 +38,7 @@ public class Vehicle
 	/**
 	 * dir is a direction of the car in the array which will be either x or y
 	 */
-	private char dir;
+	private final char dir;
 	/**
 	 * name is a type of vehicle followed by color
 	 */
@@ -58,6 +58,55 @@ public class Vehicle
 	public Vehicle(int s)
 	{
 		this.size=s;
+	}
+	
+	
+	/**
+	 * @return the size of vehicle
+	 */
+	public int getSize() {
+		return this.size;
+	}
+	/**
+	 * 
+	 * @return the position of the car on the abscissa axis
+	 */
+	public int getX() {
+		return this.x;
+	}
+	/**
+	 * modification of attribute x
+	 * @param x
+	 */
+	public void setX(int x) {
+		this.x = x;
+	}
+	/**
+	 * @return the position of the car on the ordinate axis
+	 */
+	public int getY() {
+		return this.y;
+	}
+	/**
+	 * modification of attribute y
+	 * @param y 
+	 */
+	public void setY(int y) {
+		this.y = y;
+	}
+	/**
+	 * 
+	 * @return direction of the vehicle 
+	 */
+	public char getDir() {
+		return this.dir;
+	}
+	
+	/**
+	 * @return name of vehicle
+	 */
+	public String getName() {
+		return this.name;
 	}
 	
 	
