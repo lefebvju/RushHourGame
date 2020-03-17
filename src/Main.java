@@ -1,8 +1,16 @@
 
+/**
+ * @author lefebvre julien
+ *
+ */
 public class Main {
 
+	/**
+	 * creation of part
+	 * play the game
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		RushHour RushHour= new RushHour();
 		RushHour.play();
 	}
