@@ -27,6 +27,22 @@ public class Vehicle
 	 *	the size of the car 
 	 */
 	private final int size;
+	/**
+	 * x is the position of the car on the abscissa axis
+	 */
+	private int x;
+	/**
+	 * y is the position of the car on the ordinate axis
+	 */
+	private int y;
+	/**
+	 * dir is a direction of the car in the table
+	 */
+	private char dir;
+	/**
+	 * name is a type of vehicle followed by color
+	 */
+	private final String name;
 	
 	/**
 	 *  the constructor without parameter = create an normal car 
