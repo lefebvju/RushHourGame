@@ -36,7 +36,7 @@ public class Vehicle
 	 */
 	private int y;
 	/**
-	 * dir is a direction of the car in the table
+	 * dir is a direction of the car in the array which will be either x or y
 	 */
 	private char dir;
 	/**
