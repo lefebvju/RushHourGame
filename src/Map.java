@@ -21,6 +21,20 @@ public class Map {
 		
 	}
 	/**
+	 * this function adds the vehicle in such a way that it takes up as many squares as it sizes and in the right direction.
+	 * @param car is vehicle to be added
+	 */
+	public void addCar(Vehicle car) {
+		for(int i=0;i<car.getSize();i++) {
+			if( car.getDir()=='x') {
+				this.map[car.getY()][car.getX()+i]=car;
+			}else if(car.getDir()=='y') {
+				this.map[car.getY()+i][car.getX()]=car;
+			}
+		}
+			
+	}
+	/**
 	 * draw the table 
 	 */
 	public void draw() {
