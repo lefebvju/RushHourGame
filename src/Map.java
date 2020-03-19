@@ -1,6 +1,6 @@
 /**
  * the Car park
- * @author sylvesad
+ * @author lefebvre julien
  *	
  */
 public class Map {
@@ -20,6 +20,19 @@ public class Map {
 		this.map= new Vehicle[DEFAULT_SIZE][DEFAULT_SIZE];
 		
 	}
-	
-
+	/**
+	 * draw the table 
+	 */
+	public void draw() {
+		for(int i=0;i<DEFAULT_SIZE;i++) {
+			for( int u=0;u<DEFAULT_SIZE;u++) {
+				if(this.map[i][u]==null) {
+					System.out.print("    |");
+				}else {
+					System.out.print(this.map[i][u]+"|");
+					}
+			}
+			System.out.println();
+			}
+		}
 }
