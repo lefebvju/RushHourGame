@@ -7,6 +7,7 @@ public class RushHour {
 
 	/**
 	 * constructor without parameter of the class RushHour
+	 * this constructor will create a game that can be played with the play method.
 	 */
 	public RushHour() {
 		
