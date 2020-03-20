@@ -43,7 +43,7 @@ public class Map {
 			if( car.getDir()=='x') {
 				this.map[car.getY()][car.getX()+i]=null;
 			}else if(car.getDir()=='y') {
-				this.map[car.getY()][car.getX()]=null;
+				this.map[car.getY()+i][car.getX()]=null;
 			}
 		}
 	}
