@@ -47,19 +47,22 @@ public class Map {
 			}
 		}
 	}
+
 	/**
 	 * draw the table 
 	 */
-	public void draw() {
+	public String toString() {
+		String retour = null;
 		for(int i=0;i<DEFAULT_SIZE;i++) {
 			for( int u=0;u<DEFAULT_SIZE;u++) {
 				if(this.map[i][u]==null) {
-					System.out.print("    |");
+					retour+=("    |");
 				}else {
-					System.out.print(this.map[i][u]+"|");
+					retour+=(this.map[i][u]+"|");
 					}
 			}
-			System.out.println();
+			retour+="\n";
 			}
+		return retour;
 		}
 }
