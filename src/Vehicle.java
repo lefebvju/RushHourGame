@@ -46,7 +46,7 @@ public class Vehicle
 	
 	
 	/**
-	 * constructor with parameter
+	 * constructor with parameter for make car
 	 * @param name 
 	 * @param x
 	 * @param y
@@ -58,6 +58,22 @@ public class Vehicle
 		this.x=x;
 		this.y=y;
 		this.size=Vehicle.DEFAULT_SIZE;
+		this.name=name;
+	}
+	/**
+	 * constructor with parameter for make all vehicle
+	 * @param name 
+	 * @param x
+	 * @param y
+	 * @param dir
+	 * @param size 
+	 */
+	public Vehicle(String name,int x, int y,char dir,int size)
+	{
+		this.dir=dir;
+		this.x=x;
+		this.y=y;
+		this.size=size;
 		this.name=name;
 	}
 	
