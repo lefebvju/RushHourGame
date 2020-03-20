@@ -71,7 +71,24 @@ public class Map {
 		}
 		return false;
 	}
-
+	/**
+	 * function to move the car
+	 * @param car
+	 * @param d is a displacement of 1 or -1
+	 * @param lim is a limit of the table
+	 * @param aut is the box on the board where the vehicle wants to go.
+	 */
+public void deplacer(Vehicle car,int d,int lim,int aut) {
+	if(car.getDir()=='y') {
+				this.supCar(car);
+				car.setY(car.getY()+d);
+				this.addCar(car);
+	}else if(car.getDir()=='x') {	
+			this.supCar(car);
+			car.setX(car.getX()+d);
+			this.addCar(car);
+		}
+}
 	/**
 	 * draw the table 
 	 */
