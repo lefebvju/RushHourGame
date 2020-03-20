@@ -115,7 +115,9 @@ public void back(Vehicle car) {
 		for(int i=0;i<DEFAULT_SIZE;i++) {
 			for( int u=0;u<DEFAULT_SIZE;u++) {
 				if(this.map[i][u]==null) {
-					retour+=("    |");
+					if(i==2 && u==5)
+						retour+="";
+					else retour+=("    |");
 				}else {
 					retour+=(this.map[i][u].getName()+"|");
 					}
