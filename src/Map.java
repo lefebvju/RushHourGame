@@ -78,7 +78,7 @@ public class Map {
 	 * @param lim is a limit of the table
 	 * @param aut is the box on the board where the vehicle wants to go.
 	 */
-public void deplacer(Vehicle car,int d,int lim,int aut) {
+public void move(Vehicle car,int d,int lim,int aut) {
 	if(car.getDir()=='y') {
 				this.supCar(car);
 				car.setY(car.getY()+d);
@@ -88,6 +88,15 @@ public void deplacer(Vehicle car,int d,int lim,int aut) {
 			car.setX(car.getX()+d);
 			this.addCar(car);
 		}
+}
+/**
+ * this function use the function depPos and the function move  
+ * @param car
+ */
+public void avancer(Vehicle car) {
+	if(this.depPos(car, 1, 6-car.getSize(),car.getSize()))
+	this.move(car, 1, 6-car.getSize(),car.getSize());
+	else System.out.println("impossible d'avancer");
 }
 	/**
 	 * draw the table 
