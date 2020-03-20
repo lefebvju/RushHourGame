@@ -50,7 +50,7 @@ public void playLevel(int a) {
 			}}
 			System.out.println(Park.toString());
 		}
-		System.out.println("felicitation");
+		System.out.println("Congratulations!!!");
 	}else if(a==2) {
 		Scanner saisie =new Scanner(System.in);
 	Vehicle CarPlay=new Vehicle("moi ",1,2,'x');
@@ -129,7 +129,7 @@ public void playLevel(int a) {
 			}
 		System.out.println(Park.toString());
 	}
-	System.out.println("felicitation");
+	System.out.println("Congratulations!!!");
 
 		
 	}else if(a==3) {
@@ -233,7 +233,7 @@ public void playLevel(int a) {
 				}
 			System.out.println(Park.toString());
 		}
-		System.out.println("felicitation");
+		System.out.println("Congratulations!!!");
 	}
 }
 }

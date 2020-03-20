@@ -21,6 +21,7 @@ public class RushHour {
 		Partie1.playLevel(1);
 		Partie1.playLevel(2);
 		Partie1.playLevel(3);
+		System.out.println("Congratulations, you finished the game!!!!");
 	}
 	/**
 	 * this method gives the ways to move on the board
