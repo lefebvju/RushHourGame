@@ -90,12 +90,21 @@ public void move(Vehicle car,int d,int lim,int aut) {
 		}
 }
 /**
- * this function use the function depPos and the function move  
+ * this forward function use the function depPos and the function move  
  * @param car
  */
-public void avancer(Vehicle car) {
+public void advance(Vehicle car) {
 	if(this.depPos(car, 1, 6-car.getSize(),car.getSize()))
 	this.move(car, 1, 6-car.getSize(),car.getSize());
+	else System.out.println("impossible d'avancer");
+}
+/**
+ * this step back function use the function depPos and the function move  
+ * @param car
+ */
+public void back(Vehicle car) {
+	if(this.depPos(car, -1,0,-1))
+	this.move(car, -1,0,-1);
 	else System.out.println("impossible d'avancer");
 }
 	/**
