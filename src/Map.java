@@ -35,6 +35,19 @@ public class Map {
 			
 	}
 	/**
+	 *this function delete the vehicle in such a way that it takes up as many squares as it sizes and in the right direction.
+	 * @param car is vehicle to be deletes
+	 */
+	public void supCar(Vehicle car) {
+		for(int i=0;i<car.getSize();i++) {
+			if( car.getDir()=='x') {
+				this.map[car.getY()][car.getX()+i]=null;
+			}else if(car.getDir()=='y') {
+				this.map[car.getY()][car.getX()]=null;
+			}
+		}
+	}
+	/**
 	 * draw the table 
 	 */
 	public void draw() {
