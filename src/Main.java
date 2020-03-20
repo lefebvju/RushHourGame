@@ -12,6 +12,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		RushHour RushHour= new RushHour();
+		RushHour.instruc();
 		RushHour.play();
 	}
 

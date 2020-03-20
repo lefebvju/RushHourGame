@@ -59,7 +59,15 @@ public class RushHour {
 		System.out.println("felicitation");
 		
 	}
-	
+	/**
+	 * this method gives the ways to move on the board
+	 */
+	public void instruc() {
+		System.out.println("here's how to move around on the set according to the direction of the cars");
+		System.out.println("(reculer)←|car|car|→(avancer)\n");
+		System.out.println("(reculer)\n    ↑\n  |car|\n  |car|\n    ↓\n(avancer)\n");
+		
+	}
 }
 
 	
