@@ -13,7 +13,7 @@ public class Map {
 	 */
 	public Vehicle[][] map;
 	/**
-	 *	
+	 *this constructor is going to create a game board in the form of a table where we will come to arrange our cars
 	 */
 	public Map()
 	{
