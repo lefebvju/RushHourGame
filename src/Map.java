@@ -49,6 +49,30 @@ public class Map {
 	}
 
 	/**
+	 * this function allows you to find out whether a trip is possible or not
+	 * @param car
+	 * @param d is a displacement of 1 or -1
+	 * @param lim is a limit of the table
+	 * @param aut is the box on the board where the vehicle wants to go.
+	 * @return true if the requested move is possible otherwise returns false
+	 */
+	public boolean depPos(Vehicle car,int d,int lim,int aut) {
+		if(car.getDir()=='y') {
+			if(car.getY()!=lim) 
+				if(this.map[car.getY()+aut][car.getX()]==null) {
+					return true;
+					
+			}else {return false;}
+		}else if(car.getDir()=='x') {
+			if(car.getX()!=lim) 
+			if(this.map[car.getY()][car.getX()+aut]==null) {	
+				return true;
+			}else {return false;}
+		}
+		return false;
+	}
+
+	/**
 	 * draw the table 
 	 */
 	public String toString() {
