@@ -10,6 +10,8 @@
 
 public class Vehicle 
 {
+	
+	//TODO use an enumeration for constants
 	/**
 	 *  the default size of a truck
 	 */
@@ -27,6 +29,8 @@ public class Vehicle
 	 *	the size of the car 
 	 */
 	private final int size;
+	
+	//TODO gather x/y in an object (Position)
 	/**
 	 * x is the position of the car on the abscissa axis
 	 */
@@ -35,16 +39,21 @@ public class Vehicle
 	 * y is the position of the car on the ordinate axis
 	 */
 	private int y;
+	
+	//TODO do not use char here, declare an enumeration
 	/**
 	 * dir is a direction of the car in the array which will be either x or y
 	 */
 	private final char dir;
+	
+	//TODO u shlud better store color instead of name (+enum)
 	/**
 	 * name is a type of vehicle followed by color
 	 */
 	private final String name;
 	
 	
+	//TODO javadoc (finish it)
 	/**
 	 * constructor with parameter for make car
 	 * @param name 
@@ -60,6 +69,8 @@ public class Vehicle
 		this.size=Vehicle.DEFAULT_SIZE;
 		this.name=name;
 	}
+	
+	//TODO javadoc (finish it)
 	/**
 	 * constructor with parameter for make all vehicle
 	 * @param name 
@@ -90,6 +101,7 @@ public class Vehicle
 	public int getX() {
 		return this.x;
 	}
+	
 	/**
 	 * modification of attribute x
 	 * @param x
@@ -124,8 +136,4 @@ public class Vehicle
 	public String getName() {
 		return this.name;
 	}
-	
-	
-	
-	
 }

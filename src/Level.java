@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+
+
 /**
  * 
  * @author lefebvju
@@ -11,6 +13,8 @@ public class Level {
 	 * @param a
 	 */
 public void playLevel(int a) {
+	
+	//TODO this has no sense, we must discuss that before u do something else here (ask)
 	if(a==1) {
 		Scanner saisie =new Scanner(System.in);
 		Vehicle CarPlay=new Vehicle("moi ",0,2,'x');

@@ -1,22 +1,27 @@
-import java.util.Scanner;
-
+// TODO rename to RushHourGame
+// TODO javadoc!
 /**
  * @author lefebvre julien
  */
 public class RushHour {
 
+	//TODO explain what means "ready to be played game"
+	// it will help finding fields (name, type, initial values)
 	/**
-	 * constructor without parameter of the class RushHour
-	 * this constructor will create a game that can be played with the play method.
+	 * Creates a "ready to be played game"
 	 */
 	public RushHour() {
 		
 	}
 	
+	// TODO nope, this method creates nothing (constructor did)
 	/**
 	 * method that creates a part
 	 */
 	public void play() {
+		
+		// TODO rename Partie1 (naming conventions)
+		// TODO level should have already been created
 		Level Partie1 = new Level();
 		Partie1.playLevel(1);
 		Partie1.playLevel(2);

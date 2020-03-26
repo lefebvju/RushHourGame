@@ -1,4 +1,5 @@
 
+//TODO rename to RushHourGameLauncher
 /**
  * @author lefebvre julien
  *
