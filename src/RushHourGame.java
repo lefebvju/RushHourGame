@@ -1,4 +1,4 @@
-// TODO rename to RushHourGame
+// TODO (done) rename to RushHourGame
 // TODO javadoc!
 /**
  * @author lefebvre julien
@@ -9,25 +9,29 @@ public class RushHourGame {
 	 * creation of a part attribute that represents all the levels
 	 */
 	private final Level Part= new Level();
+	/**
+	 * creation of a map of the part
+	 */
+	private final Map Park =new Map();
 
-	//TODO explain what means "ready to be played game"
+	//TODO (done) explain what means "ready to be played game"
 	// it will help finding fields (name, type, initial values)
 	/**
 	 * Creates a "ready to be played game"
-	 * because the Level is create
+	 * because the Level is create and the map is create
 	 */
 	public RushHourGame() {
 
 	}
 	
-	// TODO nope, this method creates nothing (constructor did)
+	// TODO (done) nope, this method creates nothing (constructor did)
 	/**
-	 * method that creates a part
+	 * method that play a part
 	 */
 	public void play() {
 		
-		// TODO rename Partie1 (naming conventions)
-		// TODO level should have already been created
+		// TODO (done) rename Partie1 (naming conventions)
+		// TODO (done) level should have already been created
 		getPart().playLevel(1);
 		getPart().playLevel(2);
 		getPart().playLevel(3);
@@ -45,6 +49,10 @@ public class RushHourGame {
 
 	public Level getPart() {
 		return Part;
+	}
+
+	public Map getPark() {
+		return Park;
 	}
 
 	
