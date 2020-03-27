@@ -4,14 +4,17 @@
  * @author lefebvre julien
  */
 public class RushHourGame {
+	
+	
 
 	//TODO explain what means "ready to be played game"
 	// it will help finding fields (name, type, initial values)
 	/**
 	 * Creates a "ready to be played game"
+	 * because the Level is create
 	 */
 	public RushHourGame() {
-		
+
 	}
 	
 	// TODO nope, this method creates nothing (constructor did)
@@ -22,10 +25,10 @@ public class RushHourGame {
 		
 		// TODO rename Partie1 (naming conventions)
 		// TODO level should have already been created
-		Level Partie1 = new Level();
-		Partie1.playLevel(1);
-		Partie1.playLevel(2);
-		Partie1.playLevel(3);
+		Level Game = new Level();
+		Game.playLevel(1);
+		Game.playLevel(2);
+		Game.playLevel(3);
 		System.out.println("Congratulations, you finished the game!!!!");
 	}
 	/**
@@ -37,6 +40,8 @@ public class RushHourGame {
 		System.out.println("(reculer)\n    ↑\n  |car|\n  |car|\n    ↓\n(avancer)\n");
 		
 	}
+
+
 }
 
 	
