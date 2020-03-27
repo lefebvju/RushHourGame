@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="Vehicle" project="3F-FiveHoursPMCarParkIUT" 
+    file="/3F-FiveHoursPMCarParkIUT/src/Vehicle.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="416" width="221" x="167" y="342"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="Map" project="3F-FiveHoursPMCarParkIUT" 
+    file="/3F-FiveHoursPMCarParkIUT/src/Map.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="256" width="262" x="167" y="46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="Main" project="3F-FiveHoursPMCarParkIUT" 
+    file="/3F-FiveHoursPMCarParkIUT/src/Main.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="152" x="469" y="46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="RushHour" project="3F-FiveHoursPMCarParkIUT" 
+    file="/3F-FiveHoursPMCarParkIUT/src/RushHour.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="123" x="661" y="46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="Level" project="3F-FiveHoursPMCarParkIUT" 
+    file="/3F-FiveHoursPMCarParkIUT/src/Level.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="150" x="824" y="46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="6">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="7" name="map"/>      
+      <multiplicity id="8" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
