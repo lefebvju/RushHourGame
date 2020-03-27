@@ -3,14 +3,14 @@
 /**
  * @author lefebvre julien
  */
-public class RushHour {
+public class RushHourGame {
 
 	//TODO explain what means "ready to be played game"
 	// it will help finding fields (name, type, initial values)
 	/**
 	 * Creates a "ready to be played game"
 	 */
-	public RushHour() {
+	public RushHourGame() {
 		
 	}
 	

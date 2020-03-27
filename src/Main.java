@@ -12,7 +12,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		RushHour RushHour= new RushHour();
+		RushHourGame RushHour= new RushHourGame();
 		RushHour.instruc();
 		RushHour.play();
 	}
