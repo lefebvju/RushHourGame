@@ -5,7 +5,10 @@
  */
 public class RushHourGame {
 	
-	
+	/**
+	 * creation of a part attribute that represents all the levels
+	 */
+	private final Level Part= new Level();
 
 	//TODO explain what means "ready to be played game"
 	// it will help finding fields (name, type, initial values)
@@ -25,10 +28,9 @@ public class RushHourGame {
 		
 		// TODO rename Partie1 (naming conventions)
 		// TODO level should have already been created
-		Level Game = new Level();
-		Game.playLevel(1);
-		Game.playLevel(2);
-		Game.playLevel(3);
+		getPart().playLevel(1);
+		getPart().playLevel(2);
+		getPart().playLevel(3);
 		System.out.println("Congratulations, you finished the game!!!!");
 	}
 	/**
@@ -41,6 +43,11 @@ public class RushHourGame {
 		
 	}
 
+	public Level getPart() {
+		return Part;
+	}
+
+	
 
 }
 
