@@ -47,12 +47,18 @@ public class RushHourGame {
 		
 	}
 
+	/**
+	 * @return a Level
+	 */
 	public Level getPart() {
-		return Part;
+		return this.Part;
 	}
 
+	/**
+	 * @return a Map
+	 */
 	public Map getPark() {
-		return Park;
+		return this.Park;
 	}
 
 	
