@@ -11,11 +11,11 @@ public class Map {
 	private final static int DEFAULT_SIZE=6;
 
 	//TODO explain how RH map coordinate system maps to [][], with examples
-	//TODO field should not be public
+	//TODO (done) field should not be public
 	/**
 	 * 	The table of vehicle 
 	 */
-	public Vehicle[][] map;
+	private Vehicle[][] map;
 	
 	//TODO decribe more accurately how is the board once created (content)
 	/**
@@ -29,30 +29,31 @@ public class Map {
 		
 	}
 	
-	//TODO use same word (Car or Vehicle, but not both)
+	//TODO (done) use same word (Car or Vehicle, but not both)
 	/**
 	 * this function adds the vehicle in such a way that it takes up as many squares as it sizes and in the right direction.
-	 * @param car is vehicle to be added
+	 *s is a size
+	 * @param theVehicle is vehicle to be added
 	 */
-	public void addCar(Vehicle car) {
+	public void addCar(Vehicle theVehicle) {
 		
-		//TODO please, dont "i" or "j"
-		for(int i=0;i<car.getSize();i++) {
-			if( car.getDir()=='x') {
-				this.map[car.getY()][car.getX()+i]=car;
-			}else if(car.getDir()=='y') {
-				this.map[car.getY()+i][car.getX()]=car;
+		//TODO (done) please, dont "i" or "j"
+		for(int s=0;s<theVehicle.getSize();s++) {
+			if( theVehicle.getDir()=='x') {
+				this.map[theVehicle.getY()][theVehicle.getX()+s]=theVehicle;
+			}else if(theVehicle.getDir()=='y') {
+				this.map[theVehicle.getY()+s][theVehicle.getX()]=theVehicle;
 			}
 		}
 			
 	}
 	
-	//TODO rename to remove...
+	//TODO (done) rename to remove...
 	/**
 	 *this function delete the vehicle in such a way that it takes up as many squares as it sizes and in the right direction.
 	 * @param car is vehicle to be deletes
 	 */
-	public void supCar(Vehicle car) {
+	public void remove(Vehicle car) {
 		for(int i=0;i<car.getSize();i++) {
 			if( car.getDir()=='x') {
 				this.map[car.getY()][car.getX()+i]=null;
@@ -62,7 +63,7 @@ public class Map {
 		}
 	}
 
-	//TODO rename this method
+	//TODO (done) rename this method
 	//TODO why box are ints ???
 	/**
 	 * this function allows you to find out whether a trip is possible or not
@@ -72,7 +73,7 @@ public class Map {
 	 * @param aut is the box on the board where the vehicle wants to go.
 	 * @return true if the requested move is possible otherwise returns false
 	 */
-	public boolean depPos(Vehicle car,int d,int lim,int aut) {
+	public boolean movePossible(Vehicle car,int d,int lim,int aut) {
 		if(car.getDir()=='y') {
 			if(car.getY()!=lim) 
 				if(this.map[car.getY()+aut][car.getX()]==null) {
@@ -96,34 +97,34 @@ public class Map {
 	 */
 public void move(Vehicle car,int d,int lim,int aut) {
 	if(car.getDir()=='y') {
-				this.supCar(car);
+				this.remove(car);
 				car.setY(car.getY()+d);
 				this.addCar(car);
 	}else if(car.getDir()=='x') {	
-			this.supCar(car);
+			this.remove(car);
 			car.setX(car.getX()+d);
 			this.addCar(car);
 		}
 }
 
-//TODO this method should not be public
+//TODO (done) this method should not be public
 /**
  * this forward function use the function depPos and the function move  
  * @param car
  */
-public void advance(Vehicle car) {
-	if(this.depPos(car, 1, 6-car.getSize(),car.getSize()))
+private void advance(Vehicle car) {
+	if(this.movePossible(car, 1, 6-car.getSize(),car.getSize()))
 	this.move(car, 1, 6-car.getSize(),car.getSize());
 	else System.out.println("impossible d'avancer");
 }
 
-//TODO this method should not be public
+//TODO(done) this method should not be public
 /**
  * this step back function use the function depPos and the function move  
  * @param car
  */
-public void back(Vehicle car) {
-	if(this.depPos(car, -1,0,-1))
+private void back(Vehicle car) {
+	if(this.movePossible(car, -1,0,-1))
 	this.move(car, -1,0,-1);
 	else System.out.println("impossible d'avancer");
 }
