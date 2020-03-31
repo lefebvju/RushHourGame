@@ -1,37 +1,41 @@
-// TODO (done) rename to RushHourGame
 // TODO javadoc!
 /**
  * @author lefebvre julien
  */
 public class RushHourGame {
-	
+
+	//TODO only declare field here, initialize in constructor
+	//TODO javadoc (ask what's wrong)
 	/**
 	 * creation of a part attribute that represents all the levels
 	 */
 	private final Level Part= new Level();
+	
+	//TODO only declare field here, initialize in constructor
+	//TODO javadoc (ask what's wrong)
 	/**
 	 * creation of a map of the part
 	 */
 	private final Map Park =new Map();
 
-	//TODO (done) explain what means "ready to be played game"
-	// it will help finding fields (name, type, initial values)
+	
+	//TODO how is the level
 	/**
 	 * Creates a "ready to be played game"
 	 * because the Level is create and the map is create
 	 */
 	public RushHourGame() {
-
+		//TODO code it
 	}
 	
-	// TODO (done) nope, this method creates nothing (constructor did)
+
 	/**
-	 * method that play a part
+	 * method that play the game
 	 */
 	public void play() {
 		
-		// TODO (done) rename Partie1 (naming conventions)
-		// TODO (done) level should have already been created
+		//TODO for now, consider displying current level in console, using toString
+		//TODO consider only playing a level here
 		getPart().playLevel(1);
 		getPart().playLevel(2);
 		getPart().playLevel(3);
@@ -47,6 +51,7 @@ public class RushHourGame {
 		
 	}
 
+	//TODO this method should be private
 	/**
 	 * @return a Level
 	 */
@@ -54,6 +59,7 @@ public class RushHourGame {
 		return this.Part;
 	}
 
+	//TODO this method should be private
 	/**
 	 * @return a Map
 	 */

@@ -11,13 +11,12 @@ public class Map {
 	private final static int DEFAULT_SIZE=6;
 
 	//TODO explain how RH map coordinate system maps to [][], with examples
-	//TODO (done) field should not be public
 	/**
 	 * 	The table of vehicle 
 	 */
 	private Vehicle[][] map;
 	
-	//TODO decribe more accurately how is the board once created (content)
+	//TODO describe more accurately how is the board once created (content)
 	/**
 	 *this constructor is going to create a game board in the form of a table where we will come to arrange our cars
 	 */
@@ -29,7 +28,6 @@ public class Map {
 		
 	}
 	
-	//TODO (done) use same word (Car or Vehicle, but not both)
 	/**
 	 * this function adds the vehicle in such a way that it takes up as many squares as it sizes and in the right direction.
 	 *s is a size
@@ -38,6 +36,7 @@ public class Map {
 	public void addCar(Vehicle theVehicle) {
 		
 		//TODO (done) please, dont "i" or "j"
+		//TODO "s" isn't better ;-)
 		for(int s=0;s<theVehicle.getSize();s++) {
 			if( theVehicle.getDir()=='x') {
 				this.map[theVehicle.getY()][theVehicle.getX()+s]=theVehicle;
@@ -48,7 +47,6 @@ public class Map {
 			
 	}
 	
-	//TODO (done) rename to remove...
 	/**
 	 *this function delete the vehicle in such a way that it takes up as many squares as it sizes and in the right direction.
 	 * @param car is vehicle to be deletes
@@ -63,7 +61,6 @@ public class Map {
 		}
 	}
 
-	//TODO (done) rename this method
 	//TODO why box are ints ???
 	/**
 	 * this function allows you to find out whether a trip is possible or not
@@ -107,7 +104,6 @@ public void move(Vehicle car,int d,int lim,int aut) {
 		}
 }
 
-//TODO (done) this method should not be public
 /**
  * this forward function use the function depPos and the function move  
  * @param car
@@ -118,7 +114,6 @@ private void advance(Vehicle car) {
 	else System.out.println("impossible d'avancer");
 }
 
-//TODO(done) this method should not be public
 /**
  * this step back function use the function depPos and the function move  
  * @param car
