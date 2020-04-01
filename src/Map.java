@@ -36,12 +36,12 @@ public class Map {
 	public void addCar(Vehicle theVehicle) {
 		
 		//TODO (done) please, dont "i" or "j"
-		//TODO "s" isn't better ;-)
-		for(int s=0;s<theVehicle.getSize();s++) {
+		//TODO (done) "s" isn't better ;-)
+		for(int size=0;size<theVehicle.getSize();size++) {
 			if( theVehicle.getDir()=='x') {
-				this.map[theVehicle.getY()][theVehicle.getX()+s]=theVehicle;
+				this.map[theVehicle.getY()][theVehicle.getX()+size]=theVehicle;
 			}else if(theVehicle.getDir()=='y') {
-				this.map[theVehicle.getY()+s][theVehicle.getX()]=theVehicle;
+				this.map[theVehicle.getY()+size][theVehicle.getX()]=theVehicle;
 			}
 		}
 			
