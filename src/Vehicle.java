@@ -37,7 +37,7 @@ public class Vehicle
 	private Position pos;
 	
 	
-	//TODO do not use char here, declare an enumeration
+	//TODO (done) do not use char here, declare an enumeration
 	/**
 	 * dir is a direction of the car in the array which will be either x or y
 	 */
