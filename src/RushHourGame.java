@@ -51,19 +51,19 @@ public class RushHourGame {
 		
 	}
 
-	//TODO this method should be private
+	//TODO (done) this method should be private
 	/**
 	 * @return a Level
 	 */
-	public Level getPart() {
+	private Level getPart() {
 		return this.Part;
 	}
 
-	//TODO this method should be private
+	//TODO (done) this method should be private
 	/**
 	 * @return a Map
 	 */
-	public Map getPark() {
+	private Map getPark() {
 		return this.Park;
 	}
 
