@@ -41,7 +41,7 @@ public class Vehicle
 	/**
 	 * dir is a direction of the car in the array which will be either x or y
 	 */
-	private final char dir;
+	private final Direction dir;
 	
 	//TODO u shlud better store color instead of name (+enum)
 	/**
@@ -58,7 +58,7 @@ public class Vehicle
 	 * @param y is the position of the car on the ordonate axis
 	 * @param dir
 	 */
-	public Vehicle(String name,int x, int y,char dir)
+	public Vehicle(String name,int x, int y,Direction dir)
 	{
 		this.dir=dir;
 		this.setPos(x,y);
@@ -75,7 +75,7 @@ public class Vehicle
 	 * @param dir
 	 * @param size 
 	 */
-	public Vehicle(String name,int x, int y,char dir,int size)
+	public Vehicle(String name,int x, int y,Direction dir,int size)
 	{
 		this.dir=dir;
 		this.setPos(x,y);
@@ -90,13 +90,6 @@ public class Vehicle
 		return this.size;
 	}
 	
-	/**
-	 * 
-	 * @return direction of the vehicle 
-	 */
-	public char getDir() {
-		return this.dir;
-	}
 	
 	/**
 	 * @return name of vehicle
@@ -118,5 +111,12 @@ public class Vehicle
 	 */
 	public void setPos(int x,int y) {
 		this.pos = new Position(x,y);
+	}
+/**
+ * 
+ * @return direction of the vehicle
+ */
+	public Direction getDir() {
+		return this.dir;
 	}
 }
