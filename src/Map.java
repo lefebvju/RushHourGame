@@ -39,9 +39,9 @@ public class Map {
 		//TODO (done) "s" isn't better ;-)
 		for(int size=0;size<theVehicle.getSize();size++) {
 			if( theVehicle.getDir()=='x') {
-				this.map[theVehicle.getY()][theVehicle.getX()+size]=theVehicle;
+				this.map[theVehicle.getPos().getY()][theVehicle.getPos().getX()+size]=theVehicle;
 			}else if(theVehicle.getDir()=='y') {
-				this.map[theVehicle.getY()+size][theVehicle.getX()]=theVehicle;
+				this.map[theVehicle.getPos().getY()+size][theVehicle.getPos().getX()]=theVehicle;
 			}
 		}
 			
@@ -54,9 +54,9 @@ public class Map {
 	public void remove(Vehicle car) {
 		for(int i=0;i<car.getSize();i++) {
 			if( car.getDir()=='x') {
-				this.map[car.getY()][car.getX()+i]=null;
+				this.map[car.getPos().getY()][car.getPos().getX()+i]=null;
 			}else if(car.getDir()=='y') {
-				this.map[car.getY()+i][car.getX()]=null;
+				this.map[car.getPos().getY()+i][car.getPos().getX()]=null;
 			}
 		}
 	}
@@ -72,14 +72,14 @@ public class Map {
 	 */
 	public boolean movePossible(Vehicle car,int d,int lim,int aut) {
 		if(car.getDir()=='y') {
-			if(car.getY()!=lim) 
-				if(this.map[car.getY()+aut][car.getX()]==null) {
+			if(car.getPos().getY()!=lim) 
+				if(this.map[car.getPos().getY()+aut][car.getPos().getX()]==null) {
 					return true;
 					
 			}else {return false;}
 		}else if(car.getDir()=='x') {
-			if(car.getX()!=lim) 
-			if(this.map[car.getY()][car.getX()+aut]==null) {	
+			if(car.getPos().getX()!=lim) 
+			if(this.map[car.getPos().getY()][car.getPos().getX()+aut]==null) {	
 				return true;
 			}else {return false;}
 		}
@@ -95,11 +95,11 @@ public class Map {
 public void move(Vehicle car,int d,int lim,int aut) {
 	if(car.getDir()=='y') {
 				this.remove(car);
-				car.setY(car.getY()+d);
+				car.getPos().setY(car.getPos().getY()+d);
 				this.addCar(car);
 	}else if(car.getDir()=='x') {	
 			this.remove(car);
-			car.setX(car.getX()+d);
+			car.getPos().setX(car.getPos().getX()+d);
 			this.addCar(car);
 		}
 }
