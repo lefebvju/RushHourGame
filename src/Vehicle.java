@@ -30,15 +30,12 @@ public class Vehicle
 	 */
 	private final int size;
 	
-	//TODO gather x/y in an object (Position)
+	//TODO (done) gather x/y in an object (Position)
 	/**
-	 * x is the position of the car on the abscissa axis
+	 * it's position in map
 	 */
-	private int x;
-	/**
-	 * y is the position of the car on the ordinate axis
-	 */
-	private int y;
+	private Position pos;
+	
 	
 	//TODO do not use char here, declare an enumeration
 	/**
@@ -57,15 +54,14 @@ public class Vehicle
 	/**
 	 * constructor with parameter for make car
 	 * @param name 
-	 * @param x
-	 * @param y
+	 * @param x is the position of the car on the abscissa axis
+	 * @param y is the position of the car on the ordonate axis
 	 * @param dir
 	 */
 	public Vehicle(String name,int x, int y,char dir)
 	{
 		this.dir=dir;
-		this.x=x;
-		this.y=y;
+		this.setPos(x,y);
 		this.size=Vehicle.DEFAULT_SIZE;
 		this.name=name;
 	}
@@ -82,8 +78,7 @@ public class Vehicle
 	public Vehicle(String name,int x, int y,char dir,int size)
 	{
 		this.dir=dir;
-		this.x=x;
-		this.y=y;
+		this.setPos(x,y);
 		this.size=size;
 		this.name=name;
 	}
@@ -94,34 +89,7 @@ public class Vehicle
 	public int getSize() {
 		return this.size;
 	}
-	/**
-	 * 
-	 * @return the position of the car on the abscissa axis
-	 */
-	public int getX() {
-		return this.x;
-	}
 	
-	/**
-	 * modification of attribute x
-	 * @param x
-	 */
-	public void setX(int x) {
-		this.x = x;
-	}
-	/**
-	 * @return the position of the car on the ordinate axis
-	 */
-	public int getY() {
-		return this.y;
-	}
-	/**
-	 * modification of attribute y
-	 * @param y 
-	 */
-	public void setY(int y) {
-		this.y = y;
-	}
 	/**
 	 * 
 	 * @return direction of the vehicle 
@@ -135,5 +103,20 @@ public class Vehicle
 	 */
 	public String getName() {
 		return this.name;
+	}
+
+	/**
+	 * @return position in map
+	 */
+	public Position getPos() {
+		return this.pos;
+	}
+
+	/**
+	 * @param x
+	 * @param y
+	 */
+	public void setPos(int x,int y) {
+		this.pos = new Position(x,y);
 	}
 }
