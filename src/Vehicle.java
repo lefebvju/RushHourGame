@@ -11,24 +11,12 @@
 public class Vehicle 
 {
 	
-	//TODO use an enumeration for constants
+	//TODO(done) use an enumeration for constants
+		
 	/**
-	 *  the default size of a truck
+	 *	the type of the vehicle 
 	 */
-	public final static int TRUCK_SIZE=3;
-	/**
-	 *  the default size of a normal car
-	 */
-	public final static int DEFAULT_SIZE=2;
-	/**
-	 *  the default size of bike
-	 */
-	public final static int BIKE_SIZE=1;
-	
-	/**
-	 *	the size of the car 
-	 */
-	private final int size;
+	private final Type t_vehicle;
 	
 	//TODO (done) gather x/y in an object (Position)
 	/**
@@ -62,7 +50,7 @@ public class Vehicle
 	{
 		this.dir=dir;
 		this.setPos(x,y);
-		this.size=Vehicle.DEFAULT_SIZE;
+		this.t_vehicle=Type.car;
 		this.name=name;
 	}
 	
@@ -73,22 +61,16 @@ public class Vehicle
 	 * @param x is the position of the car on the abscissa axis
 	 * @param y is the position of the car on the ordinate axis
 	 * @param dir is the direction in the map
-	 * @param size is the size of the vehicle
+	 * @param theVehicle is a type of the vehicle
 	 */
-	public Vehicle(String name,int x, int y,Direction dir,int size)
+	public Vehicle(String name,int x, int y,Direction dir,Type theVehicle)
 	{
 		this.dir=dir;
 		this.setPos(x,y);
-		this.size=size;
+		this.t_vehicle=theVehicle;
 		this.name=name;
 	}
 	
-	/**
-	 * @return the size of vehicle
-	 */
-	public int getSize() {
-		return this.size;
-	}
 	
 	
 	/**
@@ -119,4 +101,12 @@ public class Vehicle
 	public Direction getDir() {
 		return this.dir;
 	}
+
+
+/**
+ * @return the type of the vehicle
+ */
+public Type getT_vehicle() {
+	return this.t_vehicle;
+}
 }

@@ -37,7 +37,7 @@ public class Map {
 		
 		//TODO (done) please, dont "i" or "j"
 		//TODO (done) "s" isn't better ;-)
-		for(int size=0;size<theVehicle.getSize();size++) {
+		for(int size=0;size<theVehicle.getT_vehicle().getSize();size++) {
 			if( Direction.horizontal.equals(theVehicle.getDir())) {
 				this.map[theVehicle.getPos().getY()][theVehicle.getPos().getX()+size]=theVehicle;
 			}else if(Direction.vertical.equals(theVehicle.getDir())) {
@@ -52,7 +52,7 @@ public class Map {
 	 * @param car is vehicle to be deletes
 	 */
 	public void remove(Vehicle car) {
-		for(int i=0;i<car.getSize();i++) {
+		for(int i=0;i<car.getT_vehicle().getSize();i++) {
 			if(  Direction.horizontal.equals(car.getDir())) {
 				this.map[car.getPos().getY()][car.getPos().getX()+i]=null;
 			}else if( Direction.vertical.equals(car.getDir())) {
@@ -109,8 +109,8 @@ public void move(Vehicle car,int d,int lim,int aut) {
  * @param car
  */
 private void advance( Vehicle car) {
-	if(this.movePossible(car, 1, 6-car.getSize(),car.getSize()))
-		this.move(car, 1, 6-car.getSize(),car.getSize());
+	if(this.movePossible(car, 1, 6-car.getT_vehicle().getSize(),car.getT_vehicle().getSize()))
+		this.move(car, 1, 6-car.getT_vehicle().getSize(),car.getT_vehicle().getSize());
 	else System.out.println("impossible d'avancer");
 }
 
