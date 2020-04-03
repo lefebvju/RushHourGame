@@ -10,15 +10,18 @@ public class Map {
 	 */
 	private final static int DEFAULT_SIZE=6;
 
-	//TODO explain how RH map coordinate system maps to [][], with examples
+	//TODO (done) explain how RH map coordinate system maps to [][], with examples
 	/**
-	 * 	The table of vehicle 
+	 * 	c'est un tableau de voiture où les coordonnées de la voiture place l'arrière 
+	 * de la voiture et où le reste de la voiture sera placée en fonction de la taille 
+	 * et de la direction.
 	 */
 	private Vehicle[][] map;
 	
-	//TODO describe more accurately how is the board once created (content)
+	//TODO (done) describe more accurately how is the board once created (content)
 	/**
 	 *this constructor is going to create a game board in the form of a table where we will come to arrange our cars
+	 *this table is created in a dimension of 6 by 6 and this table represents a parking lot.
 	 */
 	public Map()
 	{
@@ -30,7 +33,6 @@ public class Map {
 	
 	/**
 	 * this function adds the vehicle in such a way that it takes up as many squares as it sizes and in the right direction.
-	 *s is a size
 	 * @param theVehicle is vehicle to be added
 	 */
 	public void addCar(Vehicle theVehicle) {
@@ -85,6 +87,7 @@ public class Map {
 		}
 		return false;
 	}
+	
 	/**
 	 * function to move the car
 	 * @param car
