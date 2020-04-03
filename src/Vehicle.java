@@ -11,7 +11,7 @@
 public class Vehicle 
 {
 	
-	//TODO(done) use an enumeration for constants
+	//TODO (done) use an enumeration for constants
 		
 	/**
 	 *	the type of the vehicle 
@@ -31,53 +31,44 @@ public class Vehicle
 	 */
 	private final Direction dir;
 	
-	//TODO u shlud better store color instead of name (+enum)
+	//TODO (done) u shlud better store color instead of name (+enum)
 	/**
-	 * name is a type of vehicle followed by color
+	 * it's a color of car
 	 */
-	private final String name;
+	private final Color color;
 	
 	
 	//TODO (done) javadoc (finish it)
 	/**
 	 * constructor with parameter for make car
-	 * @param name 
+	 * @param color of vehicle 
 	 * @param x is the position of the car on the abscissa axis
 	 * @param y is the position of the car on the ordonate axis
 	 * @param dir is the direction in the map
 	 */
-	public Vehicle(String name,int x, int y,Direction dir)
+	public Vehicle(Color color,int x, int y,Direction dir)
 	{
 		this.dir=dir;
 		this.setPos(x,y);
 		this.t_vehicle=Type.car;
-		this.name=name;
+		this.color=color;
 	}
 	
 	//TODO (done) javadoc (finish it)
 	/**
 	 * constructor with parameter for make all vehicle
-	 * @param name 
+	 * @param color of vehicle 
 	 * @param x is the position of the car on the abscissa axis
 	 * @param y is the position of the car on the ordinate axis
 	 * @param dir is the direction in the map
 	 * @param theVehicle is a type of the vehicle
 	 */
-	public Vehicle(String name,int x, int y,Direction dir,Type theVehicle)
+	public Vehicle(Color color,int x, int y,Direction dir,Type theVehicle)
 	{
 		this.dir=dir;
 		this.setPos(x,y);
 		this.t_vehicle=theVehicle;
-		this.name=name;
-	}
-	
-	
-	
-	/**
-	 * @return name of vehicle
-	 */
-	public String getName() {
-		return this.name;
+		this.color=color;
 	}
 
 	/**
@@ -102,11 +93,17 @@ public class Vehicle
 		return this.dir;
 	}
 
-
 /**
  * @return the type of the vehicle
  */
 public Type getT_vehicle() {
 	return this.t_vehicle;
+}
+/**
+ * 
+ * @return color of vehicle
+ */
+public Color getColor() {
+	return this.color;
 }
 }

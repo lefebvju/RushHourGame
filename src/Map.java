@@ -134,7 +134,7 @@ private void back(Vehicle car) {
 						retour+="";
 					else retour+=("    |");
 				}else {
-					retour+=(this.map[i][u].getName()+"|");
+					retour+=(this.map[i][u].getColor()+"|");
 					}
 			}
 			retour+="\n";

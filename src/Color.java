@@ -1,0 +1,47 @@
+/**
+ * 
+ * @author lefeb
+ *
+ */
+public enum Color {
+	/**
+	 * 
+	 */
+	blue,
+	/**
+	 * 
+	 */
+	red,
+	/**
+	 * 
+	 */
+	yellow,
+	/**
+	 * 
+	 */
+	orange,
+	/**
+	 * 
+	 */
+	purple,
+	/**
+	 * 
+	 */
+	pink,
+	/**
+	 * 
+	 */
+	lime,
+	/**
+	 * 
+	 */
+	aqua,
+	/**
+	 * 
+	 */
+	navy,
+	/**
+	 * 
+	 */
+	olive;
+}
