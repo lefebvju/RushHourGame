@@ -1,31 +1,34 @@
-// TODO javadoc!
+// TODO (done) javadoc!
 /**
+ * it's a game that's going to be played
  * @author lefebvre julien
  */
 public class RushHourGame {
 
-	//TODO only declare field here, initialize in constructor
-	//TODO javadoc (ask what's wrong)
+	//TODO (done) only declare field here, initialize in constructor
+	//TODO (done) javadoc (ask what's wrong)
 	/**
-	 * creation of a part attribute that represents all the levels
+	 * this is the level that will be played
 	 */
-	private final Level Part= new Level();
+	private final Level Part;
 	
-	//TODO only declare field here, initialize in constructor
-	//TODO javadoc (ask what's wrong)
+	//TODO (done) only declare field here, initialize in constructor
+	//TODO (done) javadoc (ask what's wrong)
 	/**
-	 * creation of a map of the part
+	 * this is the game board we're gonna play on
 	 */
-	private final Map Park =new Map();
+	private final Map Park;
 
 	
-	//TODO how is the level
+	//TODO (done) how is the level
 	/**
 	 * Creates a "ready to be played game"
-	 * because the Level is create and the map is create
+	 * because the level at which we're going to play is create and the map is create
 	 */
 	public RushHourGame() {
-		//TODO code it
+		this.Park=new Map();
+		this.Part=new Level();
+		//TODO (done) code it
 	}
 	
 
