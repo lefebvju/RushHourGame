@@ -3,7 +3,7 @@
  * 
  * the vehicle needed in the car park
  *  
- * @author sylvesad
+ * @author lefebvju
  * 
  *
  */
@@ -50,13 +50,13 @@ public class Vehicle
 	private final String name;
 	
 	
-	//TODO javadoc (finish it)
+	//TODO (done) javadoc (finish it)
 	/**
 	 * constructor with parameter for make car
 	 * @param name 
 	 * @param x is the position of the car on the abscissa axis
 	 * @param y is the position of the car on the ordonate axis
-	 * @param dir
+	 * @param dir is the direction in the map
 	 */
 	public Vehicle(String name,int x, int y,Direction dir)
 	{
@@ -66,14 +66,14 @@ public class Vehicle
 		this.name=name;
 	}
 	
-	//TODO javadoc (finish it)
+	//TODO (done) javadoc (finish it)
 	/**
 	 * constructor with parameter for make all vehicle
 	 * @param name 
-	 * @param x
-	 * @param y
-	 * @param dir
-	 * @param size 
+	 * @param x is the position of the car on the abscissa axis
+	 * @param y is the position of the car on the ordinate axis
+	 * @param dir is the direction in the map
+	 * @param size is the size of the vehicle
 	 */
 	public Vehicle(String name,int x, int y,Direction dir,int size)
 	{
@@ -106,8 +106,8 @@ public class Vehicle
 	}
 
 	/**
-	 * @param x
-	 * @param y
+	 * @param x is the position of the car on the abscissa axis
+	 * @param y is the position of the car on the ordinate axis
 	 */
 	public void setPos(int x,int y) {
 		this.pos = new Position(x,y);
