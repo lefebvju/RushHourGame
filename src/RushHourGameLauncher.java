@@ -1,10 +1,10 @@
 
-//TODO rename to RushHourGameLauncher
+//TODO (done) rename to RushHourGameLauncher
 /**
  * @author lefebvre julien
  *
  */
-public class Main {
+public class RushHourGameLauncher {
 
 	/**
 	 * creation of part
