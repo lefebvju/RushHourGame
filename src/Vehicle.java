@@ -11,34 +11,30 @@
 public class Vehicle 
 {
 	
-	//TODO (done) use an enumeration for constants
 		
 	/**
 	 *	the type of the vehicle 
 	 */
 	private final Type t_vehicle;
 	
-	//TODO (done) gather x/y in an object (Position)
 	/**
 	 * it's position in map
 	 */
 	private Position pos;
 	
 	
-	//TODO (done) do not use char here, declare an enumeration
 	/**
 	 * dir is a direction of the car in the array which will be either x or y
 	 */
 	private final Direction dir;
 	
-	//TODO (done) u shlud better store color instead of name (+enum)
 	/**
 	 * it's a color of car
 	 */
 	private final Color color;
 	
 	
-	//TODO (done) javadoc (finish it)
+	//TODO gather x/y in a single Position object
 	/**
 	 * constructor with parameter for make car
 	 * @param color of vehicle 
@@ -54,7 +50,7 @@ public class Vehicle
 		this.color=color;
 	}
 	
-	//TODO (done) javadoc (finish it)
+	//TODO gather x/y in a single Position object
 	/**
 	 * constructor with parameter for make all vehicle
 	 * @param color of vehicle 

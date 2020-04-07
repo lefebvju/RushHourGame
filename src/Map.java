@@ -10,7 +10,7 @@ public class Map {
 	 */
 	private final static int DEFAULT_SIZE=6;
 
-	//TODO (done) explain how RH map coordinate system maps to [][], with examples
+	//TODO  explain how RH map coordinate system maps to [][], with examples (not done, ask)
 	/**
 	 * 	c'est un tableau de voiture où les coordonnées de la voiture place l'arrière 
 	 * de la voiture et où le reste de la voiture sera placée en fonction de la taille 
@@ -18,7 +18,7 @@ public class Map {
 	 */
 	private Vehicle[][] map;
 	
-	//TODO (done) describe more accurately how is the board once created (content)
+	//TODO describe more accurately how is the board once created (content) (not done, ask!!)
 	/**
 	 *this constructor is going to create a game board in the form of a table where we will come to arrange our cars
 	 *this table is created in a dimension of 6 by 6 and this table represents a parking lot.
@@ -37,8 +37,6 @@ public class Map {
 	 */
 	public void addCar(Vehicle theVehicle) {
 		
-		//TODO (done) please, dont "i" or "j"
-		//TODO (done) "s" isn't better ;-)
 		for(int size=0;size<theVehicle.getT_vehicle().getSize();size++) {
 			if( Direction.horizontal.equals(theVehicle.getDir())) {
 				this.map[theVehicle.getPos().getY()][theVehicle.getPos().getX()+size]=theVehicle;

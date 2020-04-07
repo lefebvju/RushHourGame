@@ -1,26 +1,25 @@
-// TODO (done) javadoc!
+
 /**
  * it's a game that's going to be played
  * @author lefebvre julien
  */
 public class RushHourGame {
 
-	//TODO (done) only declare field here, initialize in constructor
-	//TODO (done) javadoc (ask what's wrong)
+	//TODO rename (naming conventions)
 	/**
 	 * this is the level that will be played
 	 */
 	private final Level Part;
 	
-	//TODO (done) only declare field here, initialize in constructor
-	//TODO (done) javadoc (ask what's wrong)
+	//TODO rename (naming conventions)
+
 	/**
 	 * this is the game board we're gonna play on
 	 */
 	private final Map Park;
 
 	
-	//TODO (done) how is the level
+	//TODO how is the level? (not done)
 	/**
 	 * Creates a "ready to be played game"
 	 * because the level at which we're going to play is create and the map is create
@@ -28,7 +27,6 @@ public class RushHourGame {
 	public RushHourGame() {
 		this.Park=new Map();
 		this.Part=new Level();
-		//TODO (done) code it
 	}
 	
 
@@ -37,8 +35,7 @@ public class RushHourGame {
 	 */
 	public void play() {
 		
-		//TODO for now, consider displying current level in console, using toString
-		//TODO consider only playing a level here
+		//TODO directly access field here
 		getPart().playLevel(1);
 		getPart().playLevel(2);
 		getPart().playLevel(3);
@@ -54,7 +51,7 @@ public class RushHourGame {
 		
 	}
 
-	//TODO (done) this method should be private
+	//TODO useless, remove it
 	/**
 	 * @return a Level
 	 */
@@ -62,16 +59,13 @@ public class RushHourGame {
 		return this.Part;
 	}
 
-	//TODO (done) this method should be private
+	//TODO useless, remove it
 	/**
 	 * @return a Map
 	 */
 	private Map getPark() {
 		return this.Park;
 	}
-
-	
-
 }
 
 	
