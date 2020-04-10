@@ -1,11 +1,7 @@
-
 /**
- * 
  * the vehicle needed in the car park
  *  
  * @author lefebvju
- * 
- *
  */
 
 public class Vehicle 
@@ -18,7 +14,7 @@ public class Vehicle
 	private final Type t_vehicle;
 	
 	/**
-	 * it's position in map
+	 * It's the position of the back of the car in map.
 	 */
 	private Position pos;
 	
@@ -34,35 +30,33 @@ public class Vehicle
 	private final Color color;
 	
 	
-	//TODO gather x/y in a single Position object
+	//TODO (done) gather x/y in a single Position object
 	/**
 	 * constructor with parameter for make car
 	 * @param color of vehicle 
-	 * @param x is the position of the car on the abscissa axis
-	 * @param y is the position of the car on the ordonate axis
+	 * @param pos It's the position of the back of the car.
 	 * @param dir is the direction in the map
 	 */
-	public Vehicle(Color color,int x, int y,Direction dir)
+	public Vehicle(Color color,Position pos,Direction dir)
 	{
 		this.dir=dir;
-		this.setPos(x,y);
+		this.pos=pos;
 		this.t_vehicle=Type.car;
 		this.color=color;
 	}
 	
-	//TODO gather x/y in a single Position object
+	//TODO (done) gather x/y in a single Position object
 	/**
 	 * constructor with parameter for make all vehicle
 	 * @param color of vehicle 
-	 * @param x is the position of the car on the abscissa axis
-	 * @param y is the position of the car on the ordinate axis
+	 * @param pos It's the position of the back of the car.
 	 * @param dir is the direction in the map
 	 * @param theVehicle is a type of the vehicle
 	 */
-	public Vehicle(Color color,int x, int y,Direction dir,Type theVehicle)
+	public Vehicle(Color color,Position pos,Direction dir,Type theVehicle)
 	{
 		this.dir=dir;
-		this.setPos(x,y);
+		this.pos=pos;
 		this.t_vehicle=theVehicle;
 		this.color=color;
 	}
