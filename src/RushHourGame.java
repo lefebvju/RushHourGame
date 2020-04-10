@@ -1,32 +1,26 @@
+import java.util.Scanner;
 
 /**
  * it's a game that's going to be played
  * @author lefebvre julien
  */
 public class RushHourGame {
-
-	//TODO rename (naming conventions)
-	/**
-	 * this is the level that will be played
-	 */
-	private final Level Part;
 	
-	//TODO rename (naming conventions)
+	//TODO (done) rename (naming conventions)
 
 	/**
 	 * this is the game board we're gonna play on
 	 */
-	private final Map Park;
+	private final Map park;
 
 	
-	//TODO how is the level? (not done)
+	//TODO (done) how is the level? (not done)
 	/**
 	 * Creates a "ready to be played game"
-	 * because the level at which we're going to play is create and the map is create
+	 * because the map is create
 	 */
 	public RushHourGame() {
-		this.Park=new Map();
-		this.Part=new Level();
+		this.park=new Map();
 	}
 	
 
@@ -35,10 +29,49 @@ public class RushHourGame {
 	 */
 	public void play() {
 		
-		//TODO directly access field here
-		getPart().playLevel(1);
-		getPart().playLevel(2);
-		getPart().playLevel(3);
+		//TODO (done) directly access field here
+		Scanner saisie =new Scanner(System.in);
+		Position p_CarPlay = new Position(0,2);
+		Vehicle CarPlay=new Vehicle(Color.lime,p_CarPlay,Direction.horizontal);
+		Position p_CarBlue = new Position(3,1);
+		Vehicle carBlue=new Vehicle(Color.blue,p_CarBlue,Direction.vertical);
+		Position p_CarRed = new Position(3,3);
+		Vehicle carRed=new Vehicle(Color.red,p_CarRed,Direction.horizontal);
+		
+		this.park.addCar(CarPlay);
+		this.park.addCar(carBlue);
+	
+		this.park.addCar(carRed);
+		
+		System.out.println(this.park.toString());
+		
+		while(CarPlay.getPos().getX()!=4) {
+			
+			System.out.println("1:advance\n2:back");
+			int ent=saisie.nextInt();
+			if(ent==1) {
+				
+				System.out.println("1:moi\n2:car1\n3:car2");
+				ent=saisie.nextInt();
+				if(ent==1) {
+					this.park.advance(CarPlay);
+				}else if (ent==2) {
+					this.park.advance(carBlue);
+				}else if (ent==3) {
+					this.park.advance(carRed);}
+			}else if(ent==2) {
+				System.out.println("1:moi\n2:car1\n3:car2");
+				ent=saisie.nextInt();
+				if(ent==1) {
+					this.park.back(CarPlay);
+				}else if (ent==2) {
+					this.park.back(carBlue);
+				}else if (ent==3) {
+					this.park.back(carRed);
+			}}
+			System.out.println(this.park.toString());
+		}
+		System.out.println("Congratulations!!!");
 		System.out.println("Congratulations, you finished the game!!!!");
 	}
 	/**
@@ -51,21 +84,8 @@ public class RushHourGame {
 		
 	}
 
-	//TODO useless, remove it
-	/**
-	 * @return a Level
-	 */
-	private Level getPart() {
-		return this.Part;
-	}
-
-	//TODO useless, remove it
-	/**
-	 * @return a Map
-	 */
-	private Map getPark() {
-		return this.Park;
-	}
+	//TODO (done) useless, remove it
+	
 }
 
 	
