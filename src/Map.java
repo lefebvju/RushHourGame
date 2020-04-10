@@ -65,13 +65,13 @@ public class Map {
 		}
 	}
 
-	//TODO why box are ints ???
+	//TODO (done) why box are ints ???
 	/**
 	 * this function allows you to find out whether a trip is possible or not
 	 * @param car
 	 * @param d is a displacement of 1 or -1
 	 * @param lim is a limit of the table
-	 * @param aut is the box on the board where the vehicle wants to go.
+	 * @param aut is the integer that is added to the position to identify the box on the board where the vehicle wants to go.
 	 * @return true if the requested move is possible otherwise returns false
 	 */
 	public boolean movePossible(Vehicle car,int d,int lim,int aut) {
