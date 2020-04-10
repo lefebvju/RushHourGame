@@ -15,9 +15,9 @@ public class Map {
 	 * 	it's a car chart where the coordinates of the car place the back 
 	 * of the car and where the rest of the car will be placed according to the size 
 	 * and management.
-	 * les cases sont numérotés en colonne de 0 à 6 et en ligne de 0 à 6. 
-	 *Par exemple pour une voiture qui sera dans le coins en haut à gauche sa position sera [0][0] et dans le coin en bas à droite se sera [5][5]. 
-	 *Les coordonnées sont gérer de la façon suivante [ligne][colonne].
+	 * the boxes are numbered in column from 0 to 6 and in line from 0 to 6. 
+	 *For example, a car in the top left corner will be [0][0] and in the bottom right corner will be [5][5]. 
+	 *The coordinates are managed in the following way [row][column].
 	 */
 	private Vehicle[][] map;
 	
