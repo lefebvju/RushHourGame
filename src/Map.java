@@ -10,11 +10,14 @@ public class Map {
 	 */
 	private final static int DEFAULT_SIZE=6;
 
-	//TODO  explain how RH map coordinate system maps to [][], with examples (not done, ask)
+	//TODO (done) explain how RH map coordinate system maps to [][], with examples (not done, ask)
 	/**
-	 * 	c'est un tableau de voiture où les coordonnées de la voiture place l'arrière 
-	 * de la voiture et où le reste de la voiture sera placée en fonction de la taille 
-	 * et de la direction.
+	 * 	it's a car chart where the coordinates of the car place the back 
+	 * of the car and where the rest of the car will be placed according to the size 
+	 * and management.
+	 * les cases sont numérotés en colonne de 0 à 6 et en ligne de 0 à 6. 
+	 *Par exemple pour une voiture qui sera dans le coins en haut à gauche sa position sera [0][0] et dans le coin en bas à droite se sera [5][5]. 
+	 *Les coordonnées sont gérer de la façon suivante [ligne][colonne].
 	 */
 	private Vehicle[][] map;
 	
@@ -22,6 +25,7 @@ public class Map {
 	/**
 	 *this constructor is going to create a game board in the form of a table where we will come to arrange our cars
 	 *this table is created in a dimension of 6 by 6 and this table represents a parking lot.
+	 *
 	 */
 	public Map()
 	{
@@ -109,7 +113,7 @@ public void move(Vehicle car,int d,int lim,int aut) {
  * this forward function use the function depPos and the function move  
  * @param car
  */
-private void advance( Vehicle car) {
+public void advance( Vehicle car) {
 	if(this.movePossible(car, 1, 6-car.getT_vehicle().getSize(),car.getT_vehicle().getSize()))
 		this.move(car, 1, 6-car.getT_vehicle().getSize(),car.getT_vehicle().getSize());
 	else System.out.println("impossible d'avancer");
@@ -119,7 +123,7 @@ private void advance( Vehicle car) {
  * this step back function use the function depPos and the function move  
  * @param car
  */
-private void back(Vehicle car) {
+public void back(Vehicle car) {
 	if(this.movePossible(car, -1,0,-1))
 		this.move(car, -1,0,-1);
 	else System.out.println("impossible d'avancer");
