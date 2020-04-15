@@ -14,7 +14,13 @@ public class RushHourGame {
 	private final Map park;
 
 	
-	//TODO (done) how is the level? (not done)
+	//TODO the game is ready to play if
+	// - the player is ready
+	// - the map is set up (here consider as Level 1 card, cf. game cards)
+	// so u need 2 fields
+	// - player -> type Player
+	// - park -> type Map
+	// both have to be declared above, and initialized below
 	/**
 	 * Creates a "ready to be played game"
 	 * because the map is create

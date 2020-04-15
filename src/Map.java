@@ -10,7 +10,10 @@ public class Map {
 	 */
 	private final static int DEFAULT_SIZE=6;
 
-	//TODO (done) explain how RH map coordinate system maps to [][], with examples (not done, ask)
+	// TODO this internal representation will not be relevant to handle player moves.
+	// -> u will have to search for every part of a given car...
+	// reconsider representing map not as Vehicle[][] but as Vehicle[], encapsulating in a vehicle all the positions it occupies on map.
+	// ask !
 	/**
 	 * 	it's a car chart where the coordinates of the car place the back 
 	 * of the car and where the rest of the car will be placed according to the size 
