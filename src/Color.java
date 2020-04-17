@@ -7,41 +7,61 @@ public enum Color {
 	/**
 	 * 
 	 */
-	blue,
+	blue(1),
 	/**
 	 * 
 	 */
-	red,
+	red(2),
 	/**
 	 * 
 	 */
-	yellow,
+	yellow(3),
 	/**
 	 * 
 	 */
-	orange,
+	orange(4),
 	/**
 	 * 
 	 */
-	purple,
+	purple(5),
 	/**
 	 * 
 	 */
-	pink,
+	pink(6),
 	/**
 	 * 
 	 */
-	lime,
+	lime(7),
 	/**
 	 * 
 	 */
-	aqua,
+	aqua(8),
 	/**
 	 * 
 	 */
-	navy,
+	navy(9),
 	/**
 	 * 
 	 */
-	olive;
+	olive(10);
+	
+	/**
+	 * 
+	 */
+	private final int ID;
+	
+	/**
+	 * @param ID
+	 */
+	Color(int ID){
+		this.ID=ID;
+	}
+
+	/**
+	 * @return identifiant
+	 */
+	public int getID() {
+		return this.ID;
+	}
 }
+
