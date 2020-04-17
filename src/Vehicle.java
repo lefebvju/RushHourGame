@@ -96,4 +96,25 @@ public Type getT_vehicle() {
 public Color getColor() {
 	return this.color;
 }
+
+/**
+ * this forward function
+ */
+public void advance() {
+	if (this.getDir()==Direction.horizontal)
+		this.getPos().setX(this.getPos().getX()+1);
+	else if (this.getDir()==Direction.vertical)
+		this.getPos().setY(this.getPos().getY()+1);
+}
+
+/**
+ * this step back function 
+ */
+public void back() {
+	if (this.getDir()==Direction.horizontal)
+		this.getPos().setX(this.getPos().getX()-1);
+	else if (this.getDir()==Direction.vertical)
+		this.getPos().setY(this.getPos().getY()-1);
+}
+
 }
