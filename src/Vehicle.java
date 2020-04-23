@@ -117,4 +117,25 @@ public void back() {
 		this.getPos().setY(this.getPos().getY()-1);
 }
 
+/**
+ * 
+ * @param pos is the position compared
+ * @return true if the position is different
+ */
+public boolean equalsPos(Position pos) {
+	if(this.dir==Direction.horizontal) {
+		for(int posi=0;posi<this.getT_vehicle().getSize();posi++)
+			if(pos.getX()==this.getPos().getX()+posi&&pos.getY()==this.getPos().getY()) {
+				return false;
+			}
+	}else{
+		for(int posi=0;posi<this.getT_vehicle().getSize();posi++)
+			if(pos.getX()==this.getPos().getX()+posi&&pos.getY()==this.getPos().getY()) {
+				return false;
+			}
+	}
+	return true;
 }
+
+}
+
