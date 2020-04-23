@@ -1,4 +1,6 @@
 //TODO (done) format code
+import java.util.ArrayList;
+
 /**
  * the Car park
  * @author lefebvre julien
@@ -8,7 +10,7 @@ public class Map {
 	/**
 	 * 	The default size of map
 	 */
-	private final static int DEFAULT_SIZE=6;
+	private final static int DEFAULT_SIZE=17;
 
 	// TODO this internal representation will not be relevant to handle player moves.
 	// -> u will have to search for every part of a given car...
@@ -22,8 +24,7 @@ public class Map {
 	 *For example, a car in the top left corner will be [0][0] and in the bottom right corner will be [5][5]. 
 	 *The coordinates are managed in the following way [row][column].
 	 */
-	private Vehicle[][] map;
-	
+    private ArrayList Map = new ArrayList();
 	//TODO describe more accurately how is the board once created (content) (not done, ask!!)
 	/**
 	 *this constructor is going to create a game board in the form of a table where we will come to arrange our cars
@@ -32,7 +33,7 @@ public class Map {
 	 */
 	public Map()
 	{
-		this.map= new Vehicle[DEFAULT_SIZE][DEFAULT_SIZE];
+		this.map= new Vehicle[DEFAULT_SIZE];
 		
 		// ...
 		
@@ -44,12 +45,6 @@ public class Map {
 	 */
 	public void addCar(Vehicle theVehicle) {
 		
-		for(int size=0;size<theVehicle.getT_vehicle().getSize();size++) {
-			if( Direction.horizontal.equals(theVehicle.getDir())) {
-				this.map[theVehicle.getPos().getY()][theVehicle.getPos().getX()+size]=theVehicle;
-			}else if(Direction.vertical.equals(theVehicle.getDir())) {
-				this.map[theVehicle.getPos().getY()+size][theVehicle.getPos().getX()]=theVehicle;
-			}
 		}
 			
 	}
