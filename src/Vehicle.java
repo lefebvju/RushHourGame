@@ -126,15 +126,15 @@ public boolean equalsPos(Position pos) {
 	if(this.dir==Direction.horizontal) {
 		for(int posi=0;posi<this.getT_vehicle().getSize();posi++)
 			if(pos.getX()==this.getPos().getX()+posi&&pos.getY()==this.getPos().getY()) {
-				return false;
+				return true;
 			}
 	}else{
 		for(int posi=0;posi<this.getT_vehicle().getSize();posi++)
 			if(pos.getX()==this.getPos().getX()&&pos.getY()==this.getPos().getY()+posi) {
-				return false;
+				return true;
 			}
 	}
-	return true;
+	return false;
 }
 
 }
