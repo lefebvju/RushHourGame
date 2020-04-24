@@ -7,10 +7,6 @@ import java.util.ArrayList;
  *	
  */
 public class Map {
-	/**
-	 * 	The default size of map
-	 */
-	private final static int DEFAULT_SIZE=17;
 
 	// TODO this internal representation will not be relevant to handle player moves.
 	// -> u will have to search for every part of a given car...
@@ -24,7 +20,8 @@ public class Map {
 	 *For example, a car in the top left corner will be [0][0] and in the bottom right corner will be [5][5]. 
 	 *The coordinates are managed in the following way [row][column].
 	 */
-    private ArrayList Map = new ArrayList();
+    private ArrayList<Vehicle> map;
+    
 	//TODO describe more accurately how is the board once created (content) (not done, ask!!)
 	/**
 	 *this constructor is going to create a game board in the form of a table where we will come to arrange our cars
@@ -33,9 +30,7 @@ public class Map {
 	 */
 	public Map()
 	{
-		this.map= new Vehicle[DEFAULT_SIZE];
-		
-		// ...
+		this.map= new ArrayList<Vehicle>();
 		
 	}
 	
@@ -44,49 +39,68 @@ public class Map {
 	 * @param theVehicle is vehicle to be added
 	 */
 	public void addCar(Vehicle theVehicle) {
-		
+		this.map.add(theVehicle);
 		}
 			
-	}
+	
 	
 	/**
 	 *this function delete the vehicle in such a way that it takes up as many squares as it sizes and in the right direction.
 	 * @param car is vehicle to be deletes
 	 */
 	public void remove(Vehicle car) {
-		for(int i=0;i<car.getT_vehicle().getSize();i++) {
-			if(  Direction.horizontal.equals(car.getDir())) {
-				this.map[car.getPos().getY()][car.getPos().getX()+i]=null;
-			}else if( Direction.vertical.equals(car.getDir())) {
-				this.map[car.getPos().getY()+i][car.getPos().getX()]=null;
-			}
-		}
+		this.map.remove(car); 
 	}
 
 	//TODO (done) why box are ints ???
 	/**
 	 * this function allows you to find out whether a trip is possible or not
 	 * @param car
-	 * @param d is a displacement of 1 or -1
-	 * @param lim is a limit of the table
-	 * @param aut is the integer that is added to the position to identify the box on the board where the vehicle wants to go.
-	 * @return true if the requested move is possible otherwise returns false
+	 * @return true if the requested move in front is possible otherwise returns false
 	 */
-	public boolean movePossible(Vehicle car,int d,int lim,int aut) {
+	public boolean movePossible_Front(Vehicle car) {
 		if( Direction.vertical.equals(car.getDir())) {
-			if(car.getPos().getY()!=lim) 
-				if(this.map[car.getPos().getY()+aut][car.getPos().getX()]==null) {
-					return true;
-					
-			}else {return false;}
+			if(car.getPos().getY()+car.getT_vehicle().getSize()<5) {
+				Position pos_dep =new Position(car.getPos().getX(),car.getPos().getY()+car.getT_vehicle().getSize());
+				for(Vehicle leVehicle:this.map) {
+					if(leVehicle.equalsPos(pos_dep)) {
+					return false;
+			}}return true;}
 		}else if( Direction.horizontal.equals(car.getDir())) {
-			if(car.getPos().getX()!=lim) 
-			if(this.map[car.getPos().getY()][car.getPos().getX()+aut]==null) {	
-				return true;
-			}else {return false;}
+			if(car.getPos().getX()+car.getT_vehicle().getSize()<5) {
+				Position pos_dep =new Position(car.getPos().getX()+car.getT_vehicle().getSize(),car.getPos().getY());
+				for(Vehicle leVehicle:this.map) {
+					if(leVehicle.equalsPos(pos_dep)) {
+						return false;
+			}}return true;}
 		}
 		return false;
 	}
+	/**
+	 * this function allows you to find out whether a trip is possible or not
+	 * @param car
+	 * @return true if the requested move in back is possible otherwise returns false
+	 */
+	public boolean movePossible_Back(Vehicle car) {
+		if( Direction.vertical.equals(car.getDir())) {
+			if(car.getPos().getY()>0) {
+				Position pos_dep =new Position(car.getPos().getX(),car.getPos().getY()-1);
+				for(Vehicle leVehicle:this.map) {
+					if(leVehicle.equalsPos(pos_dep)) {
+					return false;
+			}}return true;}
+		}else if( Direction.horizontal.equals(car.getDir())) {
+			if(car.getPos().getX()>0) {
+				Position pos_dep =new Position(car.getPos().getX()-1,car.getPos().getY());
+				for(Vehicle leVehicle:this.map) {
+					if(leVehicle.equalsPos(pos_dep)) {
+						return false;
+			}}return true;}
+		}
+		return false;
+	}
+			
+			
 	
 	/**
 	 * function to move the car
@@ -95,7 +109,7 @@ public class Map {
 	 * @param lim is a limit of the table
 	 * @param aut is the box on the board where the vehicle wants to go.
 	 */
-public void move(Vehicle car,int d,int lim,int aut) {
+/*public void move(Vehicle car,int d,int lim,int aut) {
 	if( Direction.vertical.equals(car.getDir())) {
 				this.remove(car);
 				car.getPos().setY(car.getPos().getY()+d);
@@ -111,7 +125,7 @@ public void move(Vehicle car,int d,int lim,int aut) {
  * this forward function use the function depPos and the function move  
  * @param car
  */
-public void advance( Vehicle car) {
+/*public void advance( Vehicle car) {
 	if(this.movePossible(car, 1, 6-car.getT_vehicle().getSize(),car.getT_vehicle().getSize()))
 		this.move(car, 1, 6-car.getT_vehicle().getSize(),car.getT_vehicle().getSize());
 	else System.out.println("impossible d'avancer");
@@ -121,7 +135,7 @@ public void advance( Vehicle car) {
  * this step back function use the function depPos and the function move  
  * @param car
  */
-public void back(Vehicle car) {
+/*public void back(Vehicle car) {
 	if(this.movePossible(car, -1,0,-1))
 		this.move(car, -1,0,-1);
 	else System.out.println("impossible d'avancer");
@@ -143,5 +157,5 @@ public void back(Vehicle car) {
 			retour+="\n";
 			}
 		return retour;
-		}
+		}*/
 }
