@@ -60,14 +60,14 @@ public class Map {
 	 */
 	public boolean movePossible_Front(Vehicle car) {
 		if( Direction.vertical.equals(car.getDir())) {
-			if(car.getPos().getY()+car.getT_vehicle().getSize()<5) {
+			if(car.getPos().getY()+car.getT_vehicle().getSize()-1<5) {
 				Position pos_dep =new Position(car.getPos().getX(),car.getPos().getY()+car.getT_vehicle().getSize());
 				for(Vehicle leVehicle:this.map) {
 					if(leVehicle.equalsPos(pos_dep)) {
 					return false;
 			}}return true;}
 		}else if( Direction.horizontal.equals(car.getDir())) {
-			if(car.getPos().getX()+car.getT_vehicle().getSize()<5) {
+			if(car.getPos().getX()+car.getT_vehicle().getSize()-1<5) {
 				Position pos_dep =new Position(car.getPos().getX()+car.getT_vehicle().getSize(),car.getPos().getY());
 				for(Vehicle leVehicle:this.map) {
 					if(leVehicle.equalsPos(pos_dep)) {
@@ -109,11 +109,10 @@ public class Map {
 	 * @param lim is a limit of the table
 	 * @param aut is the box on the board where the vehicle wants to go.
 	 */
-/*public void move(Vehicle car,int d,int lim,int aut) {
+public void move(Vehicle car,int d,int lim,int aut) {
 	if( Direction.vertical.equals(car.getDir())) {
-				this.remove(car);
 				car.getPos().setY(car.getPos().getY()+d);
-				this.addCar(car);
+				
 	}else if( Direction.horizontal.equals(car.getDir())) {	
 			this.remove(car);
 			car.getPos().setX(car.getPos().getX()+d);
@@ -125,23 +124,24 @@ public class Map {
  * this forward function use the function depPos and the function move  
  * @param car
  */
-/*public void advance( Vehicle car) {
-	if(this.movePossible(car, 1, 6-car.getT_vehicle().getSize(),car.getT_vehicle().getSize()))
-		this.move(car, 1, 6-car.getT_vehicle().getSize(),car.getT_vehicle().getSize());
+public void advance( Vehicle car) {
+	if(movePossible_Front(car)) 
+		car.advance();
 	else System.out.println("impossible d'avancer");
+	
 }
 
 /**
  * this step back function use the function depPos and the function move  
  * @param car
  */
-/*public void back(Vehicle car) {
-	if(this.movePossible(car, -1,0,-1))
-		this.move(car, -1,0,-1);
-	else System.out.println("impossible d'avancer");
+public void back(Vehicle car) {
+	if(this.movePossible_Back(car))
+		car.back();
+	else System.out.println("impossible de reculer");
 }
 
-	@Override
+	/*@Override
 	public String toString() {
 		String retour="";
 		for(int i=0;i<DEFAULT_SIZE;i++) {
