@@ -12,6 +12,7 @@ public class Map {
 	// -> u will have to search for every part of a given car...
 	// reconsider representing map not as Vehicle[][] but as Vehicle[], encapsulating in a vehicle all the positions it occupies on map.
 	// ask !
+	private final static int DEFAULT_SIZE=6;
 	/**
 	 * 	it's a car chart where the coordinates of the car place the back 
 	 * of the car and where the rest of the car will be placed according to the size 
@@ -141,21 +142,31 @@ public void back(Vehicle car) {
 	else System.out.println("impossible de reculer");
 }
 
-	/*@Override
+	@Override
 	public String toString() {
 		String retour="";
-		for(int i=0;i<DEFAULT_SIZE;i++) {
-			for( int u=0;u<DEFAULT_SIZE;u++) {
-				if(this.map[i][u]==null) {
-					if(i==2 && u==5)
-						retour+="";
-					else retour+=("    |");
-				}else {
-					retour+=(this.map[i][u].getColor()+"|");
+		for(int row=0;row<DEFAULT_SIZE;row++) {
+			for( int col=0;col<DEFAULT_SIZE;col++) {
+				boolean write = false;
+				Position pos_case =new Position(col,row);
+				for(Vehicle leVehicle:this.map) {
+					if(leVehicle.equalsPos(pos_case)) {
+						if(col==5 && row==2) {
+							retour+=leVehicle.getColor()+"->";
+							write=true;
+						}else {
+							retour+=(leVehicle.getColor()+"|");
+							write=true;
+						}
+					}} if(!write&&col==5 && row==2) {
+						retour+=("   -->");
+					}else if(!write) {
+						retour+=("    |");
 					}
-			}
+					
+				}
 			retour+="\n";
 			}
 		return retour;
-		}*/
+		}
 }
