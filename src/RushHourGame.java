@@ -12,6 +12,11 @@ public class RushHourGame {
 	 * this is the game board we're gonna play on
 	 */
 	private Map park;
+	/**
+	 * 
+	 */
+	private Player player;
+
 
 	
 	//TODO the game is ready to play if
@@ -27,6 +32,7 @@ public class RushHourGame {
 	 */
 	public RushHourGame() {
 		this.park=new Map();
+		this.player=new Player();
 	}
 	
 
@@ -34,6 +40,17 @@ public class RushHourGame {
 	 * method that play the game
 	 */
 	public void play() {
+		boolean GameIsOver=false;
+		while(!GameIsOver) {
+			System.out.println(this.park.toString());
+			this.park.processToMove(this.player.AskMove());
+			
+		}
+		
+	
+		
+		
+		/*
 		//TODO (done) directly access field here
 		Scanner saisie =new Scanner(System.in);
 		Position p_CarPlay = new Position(0,2);
