@@ -86,40 +86,19 @@ public class Map {
 		if( Direction.vertical.equals(car.getDir())) {
 			if(car.getPos().getY()>0) {
 				Position pos_dep =new Position(car.getPos().getX(),car.getPos().getY()-1);
-				for(Vehicle leVehicle:this.map) {
-					if(leVehicle.equalsPos(pos_dep)) {
-					return false;
-			}}return true;}
+					if(this.findCar(pos_dep)!=null) {
+						return false;
+			}return true;}
 		}else if( Direction.horizontal.equals(car.getDir())) {
 			if(car.getPos().getX()>0) {
 				Position pos_dep =new Position(car.getPos().getX()-1,car.getPos().getY());
-				for(Vehicle leVehicle:this.map) {
-					if(leVehicle.equalsPos(pos_dep)) {
+				if(this.findCar(pos_dep)!=null) {
 						return false;
-			}}return true;}
+			}return true;}
 		}
 		return false;
 	}
 			
-			
-	
-	/**
-	 * function to move the car
-	 * @param car
-	 * @param d is a displacement of 1 or -1
-	 * @param lim is a limit of the table
-	 * @param aut is the box on the board where the vehicle wants to go.
-	 */
-public void move(Vehicle car,int d,int lim,int aut) {
-	if( Direction.vertical.equals(car.getDir())) {
-				car.getPos().setY(car.getPos().getY()+d);
-				
-	}else if( Direction.horizontal.equals(car.getDir())) {	
-			this.remove(car);
-			car.getPos().setX(car.getPos().getX()+d);
-			this.addCar(car);
-		}
-}
 
 /**
  * this forward function use the function depPos and the function move  
@@ -140,6 +119,15 @@ public void back(Vehicle car) {
 	if(this.movePossible_Back(car))
 		car.back();
 	else System.out.println("impossible de reculer");
+}
+
+public Vehicle findCar(Position pos) {
+	for(Vehicle leVehicle:this.map) {
+		if(leVehicle.equalsPos(pos)) {
+			return leVehicle;
+		}
+	}
+	return null;
 }
 
 	@Override
@@ -169,4 +157,21 @@ public void back(Vehicle car) {
 			}
 		return retour;
 		}
+/**
+ * 
+ * @param askMove
+ */
+	public void processToMove(Move askMove) {
+		Vehicle theVehicle =this.findCar(askMove.getPos());
+		if(askMove.getDep()==Travel.forth) {
+			for(int dep=0;dep<askMove.getNb_Dep();dep++) {
+				this.advance(theVehicle);
+			}
+		}else if(askMove.getDep()==Travel.back) {
+			for(int dep=0;dep<askMove.getNb_Dep();dep++) {
+				this.back(theVehicle);
+			}
+		}
+		
+	}
 }
