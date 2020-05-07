@@ -9,7 +9,7 @@ public class Move {
 /**
  * 
  */
-private final Direction dir;
+private final Travel dep;
 /**
  * 
  */
@@ -20,21 +20,16 @@ private final Position pos;
 private final int nb_Dep;
 
 /**
- * @param dir
+ * @param dep
  * @param pos
  * @param nb_Dep
  */
-public Move(Direction dir,Position pos,int nb_Dep) {
-	this.dir=dir;
+public Move(Travel dep,Position pos,int nb_Dep) {
+	this.dep=dep;
 	this.pos=pos;
 	this.nb_Dep=nb_Dep;
 }
-/**
- * @return Direction for move
- */
-public Direction getDir() {
-	return this.dir;
-}
+
 /**
  * @return Position of the Vehicle is positioned
  */
@@ -46,6 +41,12 @@ public Position getPos() {
  */
 public int getNb_Dep() {
 	return this.nb_Dep;
+}
+/**
+ * @return direction of travel
+ */
+public Travel getDep() {
+	return this.dep;
 }
 
 }
