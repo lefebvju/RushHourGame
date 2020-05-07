@@ -1,10 +1,10 @@
 
 /**
- * travel is an enumeration for sens of travel
+ * travel is an enumeration for direction of travel
  * @author lefeb
  *
  */
-public enum travel {
+public enum Travel {
 	/**
 	 * it's going forward
 	 */
