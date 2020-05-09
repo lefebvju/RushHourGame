@@ -12,6 +12,9 @@ public class Map {
 	// -> u will have to search for every part of a given car...
 	// reconsider representing map not as Vehicle[][] but as Vehicle[], encapsulating in a vehicle all the positions it occupies on map.
 	// ask !
+	/**
+	 * the default size of Map 
+	 */
 	private final static int DEFAULT_SIZE=6;
 	/**
 	 * 	it's a car chart where the coordinates of the car place the back 
@@ -121,6 +124,10 @@ public void back(Vehicle car) {
 	else System.out.println("impossible de reculer");
 }
 
+/**
+ * @param pos
+ * @return the vehicle present at this position
+ */
 public Vehicle findCar(Position pos) {
 	for(Vehicle leVehicle:this.map) {
 		if(leVehicle.equalsPos(pos)) {
@@ -133,8 +140,8 @@ public Vehicle findCar(Position pos) {
 	@Override
 	public String toString() {
 		String retour="";
-		for(int row=0;row<DEFAULT_SIZE;row++) {
-			for( int col=0;col<DEFAULT_SIZE;col++) {
+		for(int row=0;row<getDefaultSize();row++) {
+			for( int col=0;col<getDefaultSize();col++) {
 				boolean write = false;
 				Position pos_case =new Position(col,row);
 				for(Vehicle leVehicle:this.map) {
@@ -174,4 +181,11 @@ public Vehicle findCar(Position pos) {
 		}
 		
 	}
+
+/**
+ * @return the default size of Map 
+ */
+public static int getDefaultSize() {
+	return DEFAULT_SIZE;
+}
 }
