@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 
 /**
  * it's a game that's going to be played
@@ -50,7 +50,7 @@ public class RushHourGame {
 	
 		
 		
-		/*
+/*
 		//TODO (done) directly access field here
 		Scanner saisie =new Scanner(System.in);
 		Position p_CarPlay = new Position(0,2);
@@ -95,7 +95,7 @@ public class RushHourGame {
 		}
 		System.out.println("Congratulations!!!");
 		System.out.println("Congratulations, you finished the game!!!!");
-	}
+	*/}
 	/**
 	 * this method gives the ways to move on the board
 	 */
