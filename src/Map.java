@@ -147,16 +147,16 @@ public Vehicle findCar(Position pos) {
 				for(Vehicle leVehicle:this.map) {
 					if(leVehicle.equalsPos(pos_case)) {
 						if(col==5 && row==2) {
-							retour+=leVehicle.getColor()+"->";
+							retour+=leVehicle.getColor().getID()+"->";
 							write=true;
 						}else {
-							retour+=(leVehicle.getColor()+"|");
+							retour+=(leVehicle.getColor().getID()+" | ");
 							write=true;
 						}
 					}} if(!write&&col==5 && row==2) {
-						retour+=("   -->");
+						retour+=(" -->");
 					}else if(!write) {
-						retour+=("    |");
+						retour+=("  | ");
 					}
 					
 				}
