@@ -7,43 +7,43 @@ public enum Color {
 	/**
 	 * 
 	 */
-	blue(1),
+	blue(0),
 	/**
 	 * 
 	 */
-	red(2),
+	red(1),
 	/**
 	 * 
 	 */
-	yellow(3),
+	yellow(2),
 	/**
 	 * 
 	 */
-	orange(4),
+	orange(3),
 	/**
 	 * 
 	 */
-	purple(5),
+	purple(4),
 	/**
 	 * 
 	 */
-	pink(6),
+	pink(5),
 	/**
 	 * 
 	 */
-	lime(7),
+	lime(6),
 	/**
 	 * 
 	 */
-	aqua(8),
+	aqua(7),
 	/**
 	 * 
 	 */
-	navy(9),
+	navy(8),
 	/**
 	 * 
 	 */
-	olive(10);
+	olive(9);
 	
 	/**
 	 * 
