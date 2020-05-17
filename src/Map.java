@@ -24,7 +24,7 @@ public class Map {
 	 *For example, a car in the top left corner will be [0][0] and in the bottom right corner will be [5][5]. 
 	 *The coordinates are managed in the following way [row][column].
 	 */
-    private ArrayList<Vehicle> map;
+    public ArrayList<Vehicle> map;
     
 	//TODO describe more accurately how is the board once created (content) (not done, ask!!)
 	/**
@@ -35,6 +35,18 @@ public class Map {
 	public Map()
 	{
 		this.map= new ArrayList<Vehicle>();
+		Position p_CarPlay = new Position(0,2);
+		Vehicle CarPlay=new Vehicle(Color.lime,p_CarPlay,Direction.horizontal);
+		Position p_CarBlue = new Position(3,0);
+		Vehicle carBlue=new Vehicle(Color.blue,p_CarBlue,Direction.vertical,Type.truck);
+		Position p_CarRed = new Position(3,3);
+		Vehicle carRed=new Vehicle(Color.navy,p_CarRed,Direction.horizontal);
+		Position p_CarPink = new Position(5,0);
+		Vehicle carPink=new Vehicle(Color.pink,p_CarPink,Direction.vertical,Type.truck);
+		this.addCar(CarPlay);
+		this.addCar(carBlue);
+		this.addCar(carPink);
+		this.addCar(carRed);
 		
 	}
 	
@@ -165,10 +177,11 @@ public Vehicle findCar(Position pos) {
 		return retour;
 		}
 /**
- * 
- * @param askMove
+ * perform the movement pass in parameter
+ * @param askMove movement to be performed
+ * @return the current state of the game
  */
-	public void processToMove(Move askMove) {
+	public boolean processToMove(Move askMove) {
 		Vehicle theVehicle =this.findCar(askMove.getPos());
 		if(askMove.getDep()==Travel.forth) {
 			for(int dep=0;dep<askMove.getNb_Dep();dep++) {
@@ -179,8 +192,22 @@ public Vehicle findCar(Position pos) {
 				this.back(theVehicle);
 			}
 		}
+		return this.gameIsFinished();
 		
 	}
+
+/**
+ * this method check if the game is finished
+ * @return the current state of the game
+ */
+public boolean gameIsFinished() {
+	for(Vehicle theVehicle:this.map) {
+		if(theVehicle.getPos().equals(new Position(4,2))&&theVehicle.getDir()==Direction.horizontal) {
+			return true;
+		}
+	}
+	return false;
+}
 
 /**
  * @return the default size of Map 
@@ -188,4 +215,6 @@ public Vehicle findCar(Position pos) {
 public static int getDefaultSize() {
 	return DEFAULT_SIZE;
 }
+
+
 }
