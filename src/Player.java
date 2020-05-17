@@ -6,19 +6,29 @@ public class Player {
 		
 	}
 
-	public Move AskMove() {
+	public Move AskMove(Map park) {
 		
 		Scanner sc =new Scanner(System.in);
 		System.out.println("Entrez numéro de vehicule:");
 		int num = sc.nextInt();
-		System.out.println("");
-		int y=0;
-		int x=0;
-		Travel dep=Travel.back;
-		Position pos=new Position(x,y);
-		int nb_dep=0;
-		Move move=new Move(dep,pos,nb_dep);
-		
+		Position pos = null;
+		for(Vehicle leVehicle: park.map) {
+			if(leVehicle.getColor().getID()==num) {
+				pos=leVehicle.getPos();
+			}
+		}
+		System.out.println("entrez 1 pour avancer et 2 pour reculer");
+		int num_dep = sc.nextInt();
+		Travel dep = null;
+		if(num_dep==1) {
+			dep=Travel.forth;
+		}
+		else if (num_dep==2) {
+			dep=Travel.back;
+		}
+		System.out.println("entrez le nombre de case dont vous voulez avancer");
+		int nb_dep = sc.nextInt();
+		Move move=new Move(dep, pos, nb_dep);
 		return move;
 	}
 }
