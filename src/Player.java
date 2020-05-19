@@ -9,5 +9,5 @@ public interface Player {
 	 * @param park
 	 * @return the movement to achieve
 	 */
-	public Move AskMove(Map park) ;
+	public Move AskMove() ;
 }

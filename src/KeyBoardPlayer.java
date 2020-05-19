@@ -13,17 +13,14 @@ public class KeyBoardPlayer implements Player{
 		
 	}
 
-	public Move AskMove(Map park) {
+	public Move AskMove() {
 		
 		Scanner sc =new Scanner(System.in);
-		System.out.println("Entrez numéro de vehicule:");
-		int num = sc.nextInt();
-		Position pos = null;
-		for(Vehicle leVehicle: park.map) {
-			if(leVehicle.getColor().getID()==num) {
-				pos=leVehicle.getPos();
-			}
-		}
+		System.out.println("Entrez numéro de colonne");
+		int num_x = sc.nextInt();
+		System.out.println("Entrez numéro de ligne");
+		int num_y = sc.nextInt();
+		Position pos = new Position(num_x,num_y);
 		System.out.println("entrez 1 pour avancer et 2 pour reculer");
 		int num_dep = sc.nextInt();
 		Travel dep = null;

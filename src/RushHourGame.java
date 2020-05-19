@@ -43,7 +43,7 @@ public class RushHourGame {
 		boolean GameIsOver=this.park.gameIsFinished();
 		while(!GameIsOver) {
 			System.out.println(this.park.toString());
-			GameIsOver=this.park.processToMove(this.player.AskMove(this.park));
+			GameIsOver=this.park.processToMove(this.player.AskMove());
 		}
 		System.out.println(this.park.toString()+"\nCongratulation you win!!!");
 	
