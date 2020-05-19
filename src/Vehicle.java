@@ -78,6 +78,10 @@ public class Vehicle
 		this.pos = new Position(x,y);
 	}
 	
+	/**
+	 * modify the position of the Vehicle
+	 * @param pos is a new position
+	 */
 	public void setPos(Position pos) {
 		this.pos=pos;
 	}

@@ -71,10 +71,21 @@ public class Position {
 		return true;
 		
 	}
+	/**
+	 * this method advances the position of the vehicle and returns it
+	 * @param d it's a direction of the vehicle
+	 * @return the new position
+	 */
 	public Position getAdvancePosition(Direction d) {
 			return new Position(this.x+d.getX(),this.y+d.getY());
 		
 	}
+	
+	/**
+	 * this method moves the position of the vehicle back and returns it.
+	 * @param d it's a direction of the vehicle
+	 * @return the new position
+	 */
 	public Position getBackPosition(Direction d) {
 			return new Position(this.x-d.getX(),this.y-d.getY());
 
