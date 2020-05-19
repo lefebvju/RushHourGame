@@ -71,5 +71,19 @@ public class Position {
 		return true;
 		
 	}
+	public Position getAdvancePosition(Direction d) {
+		if (d==Direction.horizontal)
+			return new Position(this.x+1,this.y);
+		else
+			return new Position(this.x,this.y+1);
+		
+	}
+	public Position getBackPosition(Direction d) {
+		if (d==Direction.horizontal)
+			return new Position(this.x-1,this.y);
+		else
+			return new Position(this.x,this.y-1);
+	}
+	
 	
 }
