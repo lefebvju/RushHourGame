@@ -47,54 +47,9 @@ public class RushHourGame {
 		}
 		System.out.println(this.park.toString()+"\nCongratulation you win!!!");
 	
+	}
 		
-		
-/*
-		//TODO (done) directly access field here
-		Scanner saisie =new Scanner(System.in);
-		Position p_CarPlay = new Position(0,2);
-		Vehicle CarPlay=new Vehicle(Color.lime,p_CarPlay,Direction.horizontal);
-		Position p_CarBlue = new Position(3,0);
-		Vehicle carBlue=new Vehicle(Color.blue,p_CarBlue,Direction.vertical,Type.truck);
-		Position p_CarRed = new Position(3,3);
-		Vehicle carRed=new Vehicle(Color.navy,p_CarRed,Direction.horizontal);
-		
-		this.park.addCar(CarPlay);
-		this.park.addCar(carBlue);
-	
-		this.park.addCar(carRed);
-		
-		System.out.println(this.park.toString());
-		
-		while(CarPlay.getPos().getX()!=4) {
-			
-			System.out.println("1:advance\n2:back");
-			int ent=saisie.nextInt();
-			if(ent==1) {
-				
-				System.out.println("1:moi\n2:car1\n3:car2");
-				ent=saisie.nextInt();
-				if(ent==1) {
-					this.park.advance(CarPlay);
-				}else if (ent==2) {
-					this.park.advance(carBlue);
-				}else if (ent==3) {
-					this.park.advance(carRed);}
-			}else if(ent==2) {
-				System.out.println("1:moi\n2:car1\n3:car2");
-				ent=saisie.nextInt();
-				if(ent==1) {
-					this.park.back(CarPlay);
-				}else if (ent==2) {
-					this.park.back(carBlue);
-				}else if (ent==3) {
-					this.park.back(carRed);
-			}}
-			System.out.println(this.park.toString());
-		}
-		System.out.println("Congratulations!!!");
-		System.out.println("Congratulations, you finished the game!!!!");
-	*/}
+
 	/**
 	 * this method gives the ways to move on the board
 	 */
