@@ -75,6 +75,7 @@ public class Map {
 	 * @return true if the requested move in front is possible otherwise returns false
 	 */
 	public boolean movePossible_Front(Vehicle car) {
+		if(car!=null) {
 		if( Direction.vertical.equals(car.getDir())) {
 			if(car.getPos().getY()+car.getT_vehicle().getSize()-1<5) {
 				Position pos_dep =new Position(car.getPos().getX(),car.getPos().getY()+car.getT_vehicle().getSize());
@@ -89,7 +90,7 @@ public class Map {
 					if(leVehicle.equalsPos(pos_dep)) {
 						return false;
 			}}return true;}
-		}
+		}}
 		return false;
 	}
 	/**
@@ -140,7 +141,7 @@ public void back(Vehicle car) {
  * @param pos
  * @return the vehicle present at this position
  */
-public Vehicle findCar(Position pos) {
+public Vehicle findCar(Position pos){
 	for(Vehicle leVehicle:this.map) {
 		if(leVehicle.equalsPos(pos)) {
 			return leVehicle;
