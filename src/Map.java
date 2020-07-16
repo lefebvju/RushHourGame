@@ -184,13 +184,15 @@ public Vehicle findCar(Position pos){
  */
 	public boolean processToMove(Move askMove) {
 		Vehicle theVehicle =this.findCar(askMove.getPos());
-		if(askMove.getDep()==Travel.forth) {
-			for(int dep=0;dep<askMove.getNb_Dep();dep++) {
-				this.advance(theVehicle);
-			}
-		}else if(askMove.getDep()==Travel.back) {
-			for(int dep=0;dep<askMove.getNb_Dep();dep++) {
-				this.back(theVehicle);
+		if(theVehicle!=null) {
+			if(askMove.getDep()==Travel.forth) {
+				for(int dep=0;dep<askMove.getNb_Dep();dep++) {
+					this.advance(theVehicle);
+				}
+			}else if(askMove.getDep()==Travel.back) {
+				for(int dep=0;dep<askMove.getNb_Dep();dep++) {
+					this.back(theVehicle);
+				}
 			}
 		}
 		return this.gameIsFinished();
