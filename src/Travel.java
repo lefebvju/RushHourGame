@@ -1,3 +1,4 @@
+import java.util.Random;
 
 /**
  * travel is an enumeration for direction of travel
@@ -14,4 +15,8 @@ public enum Travel {
 	 */
 	back;
 	
-}
+
+public static Travel randomTravel() {
+    int pick = new Random().nextInt(Travel.values().length);
+    return Travel.values()[pick];
+}}
