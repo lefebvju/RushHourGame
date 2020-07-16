@@ -47,6 +47,18 @@ public class Vehicle
 		this.color=color;
 	}
 	
+	public Vehicle(int nb_color) {
+		
+		this.t_vehicle=Type.randomType();
+		this.pos=new Position((int) (Math.random() * (7-this.t_vehicle.getSize())),(int) (Math.random() * (7-this.t_vehicle.getSize())));
+		if(this.pos.getY()==2) {
+			this.dir=Direction.vertical;
+		}else {
+			this.dir=Direction.randomDirection();
+		}
+		this.color=Color.values()[nb_color];
+	}
+	
 	//TODO (done) gather x/y in a single Position object
 	/**
 	 * constructor with parameter for make all vehicle
