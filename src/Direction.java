@@ -1,3 +1,4 @@
+import java.util.Random;
 
 /**
  * @author lefeb
@@ -42,5 +43,9 @@ vertical(0,1);
 	 */
 	public int getY() {
 		return this.y;
+	}
+	public static Direction randomDirection() {
+	    int pick = new Random().nextInt(Direction.values().length);
+	    return Direction.values()[pick];
 	}
 }

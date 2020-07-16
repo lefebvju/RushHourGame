@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * 
  * @author lefeb
@@ -62,6 +64,10 @@ public enum Color {
 	 */
 	public int getID() {
 		return this.ID;
+	}
+	public static Color randomColor() {
+	    int pick = new Random().nextInt(Color.values().length);
+	    return Color.values()[pick];
 	}
 }
 

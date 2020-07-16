@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * 
  * @author lefeb
@@ -30,5 +32,9 @@ public enum Type {
 	 */
 	public int getSize() {
 		return this.size;
+	}
+	public static Type randomType() {
+	    int pick = new Random().nextInt(Type.values().length);
+	    return Type.values()[pick];
 	}
 }
