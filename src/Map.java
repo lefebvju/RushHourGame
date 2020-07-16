@@ -50,6 +50,17 @@ public class Map {
 		
 	}
 	
+	public Map(int nb_Vehicle) {
+		this.map= new ArrayList<Vehicle>();
+		Position p_CarPlay = new Position((int) (Math.random() * 5 ),2);
+		Vehicle CarPlay=new Vehicle(Color.blue,p_CarPlay,Direction.horizontal);
+		this.addCar(CarPlay);
+		for(int nb=1;nb<nb_Vehicle;nb++) {
+			this.addCar(new Vehicle(nb));
+		}
+	}
+	
+	
 	/**
 	 * this function adds the vehicle in such a way that it takes up as many squares as it sizes and in the right direction.
 	 * @param theVehicle is vehicle to be added
