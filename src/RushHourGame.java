@@ -32,7 +32,7 @@ public class RushHourGame {
 	 */
 	public RushHourGame() {
 		this.park=new Map();
-		this.player=new KeyBoardPlayer();
+		this.player=new RandomPlayer();
 	}
 	
 
