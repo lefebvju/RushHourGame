@@ -56,7 +56,9 @@ public class Map {
 		Vehicle CarPlay=new Vehicle(Color.blue,p_CarPlay,Direction.horizontal);
 		this.addCar(CarPlay);
 		for(int nb=1;nb<nb_Vehicle;nb++) {
-			this.addCar(new Vehicle(nb));
+			while(!this.addCar(new Vehicle(nb))) {
+				
+			}
 		}
 	}
 	
@@ -65,8 +67,13 @@ public class Map {
 	 * this function adds the vehicle in such a way that it takes up as many squares as it sizes and in the right direction.
 	 * @param theVehicle is vehicle to be added
 	 */
-	public void addCar(Vehicle theVehicle) {
+	public boolean addCar(Vehicle theVehicle) {
+		for(Vehicle vehicle:this.map) {
+			if(vehicle.equalsPos(theVehicle))
+				return false;
+		}
 		this.map.add(theVehicle);
+		return true;
 		}
 			
 	
