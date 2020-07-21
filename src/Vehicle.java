@@ -153,5 +153,22 @@ public boolean equalsPos(Position pos) {
 	return false;
 }
 
+
+public boolean equalsPos (Vehicle theVehicle) {
+	if(theVehicle.dir==Direction.horizontal) {
+		for(int posi=0;posi<theVehicle.getT_vehicle().getSize();posi++)
+			if(this.equalsPos(new Position(theVehicle.getPos().getX()+posi,theVehicle.getPos().getY()))) {
+				return true;
+			}
+	}else{
+		for(int posi=0;posi<theVehicle.getT_vehicle().getSize();posi++)
+			if(this.equalsPos(new Position(theVehicle.getPos().getX(),theVehicle.getPos().getY()+posi))) {
+				return true;
+			}
+	}
+	return false;
+}
+
+
 }
 
