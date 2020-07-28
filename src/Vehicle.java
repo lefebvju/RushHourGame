@@ -168,7 +168,10 @@ public boolean equalsPos (Vehicle theVehicle) {
 	}
 	return false;
 }
-
+public Vehicle copy() {
+	Vehicle ret= new Vehicle(this.getColor(),this.getPos(),this.getDir(),this.getT_vehicle());
+	return ret;
+}
 
 }
 

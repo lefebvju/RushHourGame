@@ -35,30 +35,31 @@ public class Map {
 	public Map()
 	{
 		this.map= new ArrayList<Vehicle>();
-		Position p_CarPlay = new Position(0,2);
-		Vehicle CarPlay=new Vehicle(Color.lime,p_CarPlay,Direction.horizontal);
-		Position p_CarBlue = new Position(3,0);
-		Vehicle carBlue=new Vehicle(Color.blue,p_CarBlue,Direction.vertical,Type.truck);
-		Position p_CarRed = new Position(3,3);
-		Vehicle carRed=new Vehicle(Color.navy,p_CarRed,Direction.horizontal);
-		Position p_CarPink = new Position(5,0);
-		Vehicle carPink=new Vehicle(Color.pink,p_CarPink,Direction.vertical,Type.truck);
-		this.addCar(CarPlay);
-		this.addCar(carBlue);
-		this.addCar(carPink);
-		this.addCar(carRed);
 		
 	}
 	
 	public Map(int nb_Vehicle) {
 		this.map= new ArrayList<Vehicle>();
-		Position p_CarPlay = new Position((int) (Math.random() * 5 ),2);
-		Vehicle CarPlay=new Vehicle(Color.blue,p_CarPlay,Direction.horizontal);
-		this.addCar(CarPlay);
-		for(int nb=1;nb<nb_Vehicle;nb++) {
-			while(!this.addCar(new Vehicle(nb))) {
-				
+		boolean playableGame=false;
+		while(!playableGame) {
+			this.map.clear();
+			Position p_CarPlay = new Position((int) (Math.random() * 5 ),2);
+			Vehicle CarPlay=new Vehicle(Color.blue,p_CarPlay,Direction.horizontal);
+			this.addCar(CarPlay);
+			
+			for(int nb=1;nb<nb_Vehicle;nb++) {
+				while(!this.addCar(new Vehicle(nb))) {
+					
+				}
 			}
+			System.out.println(this.toString());
+			Map test =this.copy();
+			RandomPlayer playerTest= new RandomPlayer();
+			for(int maxTest=0;maxTest<20000&&!playableGame;maxTest++)
+				playableGame=test.processToMove(playerTest.AskMove());
+				System.out.println(test.toString());
+				System.out.println("+");
+				System.out.println(this.toString());
 		}
 	}
 	
@@ -237,5 +238,12 @@ public static int getDefaultSize() {
 	return DEFAULT_SIZE;
 }
 
+public Map copy() {
+	Map ret=new Map();
+	for(Vehicle theVehicle: this.map) {
+		ret.addCar(theVehicle.copy());
+	}
+	return ret;
+}
 
 }
