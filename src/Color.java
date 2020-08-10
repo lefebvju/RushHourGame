@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import javax.swing.ImageIcon;
+
 /**
  * 
  * @author lefeb
@@ -9,54 +11,61 @@ public enum Color {
 	/**
 	 * 
 	 */
-	blue(0),
+	blue(0,"Bleu"),
 	/**
 	 * 
 	 */
-	red(1),
+	red(1,"Rouge"),
 	/**
 	 * 
 	 */
-	yellow(2),
+	yellow(2,"Jaune"),
 	/**
 	 * 
 	 */
-	orange(3),
+	orange(3,"Orange"),
 	/**
 	 * 
 	 */
-	purple(4),
+	purple(4,"Violet"),
 	/**
 	 * 
 	 */
-	pink(5),
+	vert(5,"Vert"),
 	/**
 	 * 
 	 */
-	lime(6),
+	Maron(6,"Marron"),
 	/**
 	 * 
 	 */
-	aqua(7),
+	green(7,"Gris"),
 	/**
 	 * 
 	 */
-	navy(8),
+	navy(8,"Navy"),
 	/**
 	 * 
 	 */
-	olive(9);
+	olive(9,"Olive");
 	
 	/**
 	 * 
 	 */
 	private final int ID;
+
+	/**
+	 * it's a part for create URL of the Vehicle
+	 */
+	private final String img;
+	
 	
 	/**
 	 * @param ID
 	 */
-	Color(int ID){
+	Color(int ID,String img){
 		this.ID=ID;
+		this.img=img;
 	}
 
 	/**
@@ -69,5 +78,14 @@ public enum Color {
 	    int pick = new Random().nextInt(Color.values().length);
 	    return Color.values()[pick];
 	}
+	
+	
+	/**
+	 * return the part of URL
+	 */
+	public String getImg() {
+		return this.img;
+	}
+
 }
 
