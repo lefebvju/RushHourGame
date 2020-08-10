@@ -1,4 +1,5 @@
 //TODO (done) format code
+import java.awt.Image;
 import java.util.ArrayList;
 
 /**
@@ -202,15 +203,17 @@ public Vehicle findCar(Position pos){
  * @return the current state of the game
  */
 	public boolean processToMove(Move askMove) {
-		Vehicle theVehicle =this.findCar(askMove.getPos());
-		if(theVehicle!=null) {
-			if(askMove.getDep()==Travel.forth) {
-				for(int dep=0;dep<askMove.getNb_Dep();dep++) {
-					this.advance(theVehicle);
-				}
-			}else if(askMove.getDep()==Travel.back) {
-				for(int dep=0;dep<askMove.getNb_Dep();dep++) {
-					this.back(theVehicle);
+		if((askMove!=null)) {
+			Vehicle theVehicle =this.findCar(askMove.getPos());
+			if(theVehicle!=null) {
+				if(askMove.getDep()==Travel.forth) {
+					for(int dep=0;dep<askMove.getNb_Dep();dep++) {
+						this.advance(theVehicle);
+					}
+				}else if(askMove.getDep()==Travel.back) {
+					for(int dep=0;dep<askMove.getNb_Dep();dep++) {
+						this.back(theVehicle);
+					}
 				}
 			}
 		}
@@ -245,5 +248,7 @@ public Map copy() {
 	}
 	return ret;
 }
+
+
 
 }

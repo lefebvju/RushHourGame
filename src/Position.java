@@ -90,6 +90,10 @@ public class Position {
 			return new Position(this.x-d.getX(),this.y-d.getY());
 
 	}
-	
+	public Position copy() {
+		Position ret= new Position(this.x,this.y);
+		return ret;
+		
+	}
 	
 }
