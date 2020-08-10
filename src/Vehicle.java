@@ -1,4 +1,6 @@
-import sun.tools.tree.ThisExpression;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 
 /**
  * the vehicle needed in the car park
@@ -31,6 +33,11 @@ public class Vehicle
 	 */
 	private final Color color;
 	
+	/**
+	 * it's an Image for graphics interface
+	 */
+	private Image img;
+	
 	
 	//TODO (done) gather x/y in a single Position object
 	/**
@@ -45,6 +52,8 @@ public class Vehicle
 		this.pos=pos;
 		this.t_vehicle=Type.car;
 		this.color=color;
+		ImageIcon ico = new ImageIcon(getClass().getResource("/img/"+this.t_vehicle.getTypeImg()+"/"+this.dir.getDirImg()+"/"+this.color.getImg()+".png"));
+		this.img = ico.getImage();
 	}
 	
 	public Vehicle(int nb_color) {
@@ -57,6 +66,8 @@ public class Vehicle
 			this.dir=Direction.randomDirection();
 		}
 		this.color=Color.values()[nb_color];
+		ImageIcon ico = new ImageIcon(getClass().getResource("/img/"+this.t_vehicle.getTypeImg()+"/"+this.dir.getDirImg()+"/"+this.color.getImg()+".png"));
+		this.img = ico.getImage();
 	}
 	
 	//TODO (done) gather x/y in a single Position object
@@ -73,6 +84,8 @@ public class Vehicle
 		this.pos=pos;
 		this.t_vehicle=theVehicle;
 		this.color=color;
+		ImageIcon ico = new ImageIcon(getClass().getResource("/img/"+this.t_vehicle.getTypeImg()+"/"+this.dir.getDirImg()+"/"+this.color.getImg()+".png"));
+		this.img = ico.getImage();
 	}
 
 	/**
@@ -153,7 +166,9 @@ public boolean equalsPos(Position pos) {
 	return false;
 }
 
-
+/**
+ * return true if theVehicle has the same position of this Vehicle
+ */
 public boolean equalsPos (Vehicle theVehicle) {
 	if(theVehicle.dir==Direction.horizontal) {
 		for(int posi=0;posi<theVehicle.getT_vehicle().getSize();posi++)
@@ -168,10 +183,20 @@ public boolean equalsPos (Vehicle theVehicle) {
 	}
 	return false;
 }
+
+/**
+ * create a new vehicle
+ */
 public Vehicle copy() {
-	Vehicle ret= new Vehicle(this.getColor(),this.getPos(),this.getDir(),this.getT_vehicle());
+	Vehicle ret= new Vehicle(this.getColor(),this.getPos().copy(),this.getDir(),this.getT_vehicle());
 	return ret;
 }
 
+/**
+ * return the Image of this Vehicle
+ */
+Image getImg() {
+	return this.img;
+}
 }
 
