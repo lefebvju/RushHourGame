@@ -16,7 +16,7 @@ public class RushHourGame {
 	 * 
 	 */
 	private Player player;
-
+	private InterfacePlayer IntPlayer;
 
 	
 	//TODO the game is ready to play if
@@ -31,8 +31,9 @@ public class RushHourGame {
 	 * because the map is create
 	 */
 	public RushHourGame() {
-		this.park=new Map();
-		this.player=new RandomPlayer();
+		this.park=new Map(9);
+		this.IntPlayer=new InterfacePlayer(this.park);
+		this.player=new KeyBoardPlayer();
 	}
 	
 
@@ -44,6 +45,7 @@ public class RushHourGame {
 		while(!GameIsOver) {
 			System.out.println(this.park.toString());
 			GameIsOver=this.park.processToMove(this.player.AskMove());
+			IntPlayer.panel.repaint();
 		}
 		System.out.println(this.park.toString()+"\nCongratulation you win!!!");
 	
