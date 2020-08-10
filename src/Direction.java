@@ -8,11 +8,11 @@ public enum Direction {
 /**
  * it's the abscissa axis
  */
-horizontal(1,0),
+horizontal(1,0,"horizontal"),
 /**
  * it's the ordinate axis
  */
-vertical(0,1);
+vertical(0,1,"vertical");
 	/**
 	 * the deplacement of x for the Direction
 	 */
@@ -22,13 +22,16 @@ vertical(0,1);
 	 */
 	private final int y;
 	
+	private final String DirImg;
+	
 	/**
 	 * @param x the move for Direction
 	 * @param y the move for Direction
 	 */
-	Direction(int x,int y){
+	Direction(int x,int y,String dirImg){
 		this.x=x;
 		this.y=y;
+		this.DirImg=dirImg;
 	}
 
 	/**
@@ -47,5 +50,9 @@ vertical(0,1);
 	public static Direction randomDirection() {
 	    int pick = new Random().nextInt(Direction.values().length);
 	    return Direction.values()[pick];
+	}
+
+	public String getDirImg() {
+		return DirImg;
 	}
 }
