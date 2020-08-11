@@ -6,22 +6,25 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class InterfacePlayer implements Player {
+public class InterfacePlayer extends JFrame implements Player  {
 
-	JFrame window = new JFrame("RushHour Game");
+	
 	public Scene panel;
 	
 	
 	
 	public InterfacePlayer(Map map) {
-	window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	window.setSize(740, 670);
-	window.setLocationRelativeTo(null);
-	window.setResizable(false);
-	window.setAlwaysOnTop(true);
+	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	this.setSize(740, 670);
+	this.setLocationRelativeTo(null);
+	this.setResizable(false);
+	this.setAlwaysOnTop(true);
 	panel=new Scene	(map);
-	window.setContentPane(panel);
-	window.setVisible(true);
+	this.setContentPane(panel);
+	this.setVisible(true);
+	
+	Movement mv=new Movement(this.getComponents());
+	
 	}
 	@Override
 	public Move AskMove() {
