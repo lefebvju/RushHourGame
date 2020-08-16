@@ -15,7 +15,7 @@ public class InterfacePlayer extends JFrame implements Player,MouseListener,Mous
 	
 	public Scene panel;
 	private int x=0,y=0,nb_dep=0;
-	Travel dir=Travel.forth;
+	Travel dir=null;
 	
 	
 	public InterfacePlayer(Map map) {
@@ -53,7 +53,26 @@ public class InterfacePlayer extends JFrame implements Player,MouseListener,Mous
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
-		//System.out.println("x="+((e.getX()+e.getComponent().getX()))+"\ny="+(e.getY()+e.getComponent().getY()));
+		synchronized (this) {
+		int depx=((e.getX()-22)/112)-this.x;
+		int depy=((e.getY()-44)/100-this.y);
+		if(depx<0||depy<0) {
+			this.dir=Travel.back;
+			if(depx<depy) {
+				this.nb_dep=Math.abs(depx);
+			}else {
+				this.nb_dep=Math.abs(depy);
+			}
+		}else {
+			this.dir=Travel.forth;
+			if(depx>depy) {
+				this.nb_dep=depx;
+			}else {
+				this.nb_dep=depy;
+			}
+		}
+		notifyAll();
+		}
 	}
 	@Override
 	public void mouseMoved(MouseEvent e) {
@@ -67,26 +86,17 @@ public class InterfacePlayer extends JFrame implements Player,MouseListener,Mous
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
-		synchronized(this) {
+		
 		// TODO Auto-generated method stub
 		this.x=(e.getX()-22)/112;
 		this.y=(e.getY()-44)/100;
-		System.out.println(x+";"+y);
-		this.nb_dep=1;
-		notifyAll();
-		}
+	
+		
+		
+		
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
-
-		// TODO Auto-generated method stub
-		//System.out.println("y2:"+e.getY());
-		//System.out.println("x2:"+e.getX());
-		int depx=e.getX()/100-this.x;
-		int depy=e.getY()/100-this.y;
-		
-			nb_dep=1;
-			this.dir=Travel.forth;
 			
 	}
 		
