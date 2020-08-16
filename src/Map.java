@@ -44,7 +44,7 @@ public class Map {
 		boolean playableGame=false;
 		while(!playableGame) {
 			this.map.clear();
-			Position p_CarPlay = new Position((int) (Math.random() * 5 ),2);
+			Position p_CarPlay = new Position((int) (Math.random() * 4 ),2);
 			Vehicle CarPlay=new Vehicle(Color.blue,p_CarPlay,Direction.horizontal);
 			this.addCar(CarPlay);
 			
