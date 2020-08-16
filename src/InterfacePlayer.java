@@ -1,31 +1,52 @@
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 
 
+/**
+ * @author lefeb
+ *
+ */
+@SuppressWarnings("javadoc")
 public class InterfacePlayer extends JFrame implements Player,MouseListener,MouseMotionListener {
 
 	
-	public Scene panel;
-	private int x=0,y=0,nb_dep=0;
-	Travel dir=null;
+	/**
+	 * 
+	 */
+	private Scene panel;
+	/**
+	 * 
+	 */
+	private int x=0;
+	/**
+	 * 
+	 */
+	private int y=0;
+	/**
+	 * 
+	 */
+	private int nb_dep=0;
+	/**
+	 * 
+	 */
+	private Travel dir=null;
 	
 	
+	/**
+	 * @param map for add map in interface 
+	 */
 	public InterfacePlayer(Map map) {
-	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	this.setSize(740, 670);
 	this.setLocationRelativeTo(null);
 	this.setResizable(false);
 	this.setAlwaysOnTop(true);
-	panel=new Scene	(map);
-	this.setContentPane(panel);
+	this.setPanel(new Scene	(map));
+	this.setContentPane(this.getPanel());
 	this.setVisible(true);
 	
 	
@@ -38,8 +59,8 @@ public class InterfacePlayer extends JFrame implements Player,MouseListener,Mous
 		
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
-		this.nb_dep=0;
-		while(this.nb_dep==0) {
+		this.setNb_dep(0);
+		while(this.getNb_dep()==0) {
 				try {
 					wait();
 				} catch (InterruptedException e) {
@@ -48,7 +69,7 @@ public class InterfacePlayer extends JFrame implements Player,MouseListener,Mous
 				}
 		}
 		}
-		return new Move(dir,new Position(x,y), nb_dep);
+		return new Move(getDir(),new Position(this.x,this.y), getNb_dep());
 	}
 	@Override
 	public void mouseDragged(MouseEvent e) {
@@ -57,18 +78,18 @@ public class InterfacePlayer extends JFrame implements Player,MouseListener,Mous
 		int depx=((e.getX()-22)/112)-this.x;
 		int depy=((e.getY()-44)/100-this.y);
 		if(depx<0||depy<0) {
-			this.dir=Travel.back;
+			this.setDir(Travel.back);
 			if(depx<depy) {
-				this.nb_dep=Math.abs(depx);
+				this.setNb_dep(Math.abs(depx));
 			}else {
-				this.nb_dep=Math.abs(depy);
+				this.setNb_dep(Math.abs(depy));
 			}
 		}else {
-			this.dir=Travel.forth;
+			this.setDir(Travel.forth);
 			if(depx>depy) {
-				this.nb_dep=depx;
+				this.setNb_dep(depx);
 			}else {
-				this.nb_dep=depy;
+				this.setNb_dep(depy);
 			}
 		}
 		notifyAll();
@@ -89,7 +110,7 @@ public class InterfacePlayer extends JFrame implements Player,MouseListener,Mous
 		
 		// TODO Auto-generated method stub
 		this.x=(e.getX()-22)/112;
-		this.y=(e.getY()-44)/100;
+		this.setY((e.getY()-44)/100);
 	
 		
 		
@@ -97,7 +118,7 @@ public class InterfacePlayer extends JFrame implements Player,MouseListener,Mous
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
-			
+		// TODO Auto-generated method stub
 	}
 		
 	@Override
@@ -109,6 +130,55 @@ public class InterfacePlayer extends JFrame implements Player,MouseListener,Mous
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 			
+	}
+	/**
+	 * @return
+	 */
+	public Travel getDir() {
+		return this.dir;
+	}
+	/**
+	 * @param dir
+	 */
+	public void setDir(Travel dir) {
+		this.dir = dir;
+	}
+	
+	/**
+	 * @return
+	 */
+	public int gety() {
+		return this.y;
+	}
+	/**
+	 * @param y
+	 */
+	public void setY(int y) {
+		this.y = y;
+	}
+	/**
+	 * @return
+	 */
+	public Scene getPanel() {
+		return this.panel;
+	}
+	/**
+	 * @param panel
+	 */
+	public void setPanel(Scene panel) {
+		this.panel = panel;
+	}
+	/**
+	 * @return
+	 */
+	public int getNb_dep() {
+		return this.nb_dep;
+	}
+	/**
+	 * @param nb_dep
+	 */
+	public void setNb_dep(int nb_dep) {
+		this.nb_dep = nb_dep;
 	}
 	
 
