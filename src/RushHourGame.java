@@ -45,7 +45,7 @@ public class RushHourGame {
 		while(!GameIsOver) {
 			System.out.println(this.park.toString());
 			GameIsOver=this.park.processToMove(this.IntPlayer.AskMove());
-			IntPlayer.panel.repaint();
+			IntPlayer.getPanel().repaint();
 		}
 		System.out.println(this.park.toString()+"\nCongratulation you win!!!");
 	

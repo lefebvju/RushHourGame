@@ -7,7 +7,7 @@ public class RushHourGameLauncher {
 
 	/**
 	 * creation of part
-	 * play the game
+	 * play the game(
 	 * @param args
 	 */
 	public static void main(String[] args) {

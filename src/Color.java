@@ -1,12 +1,11 @@
 import java.util.Random;
 
-import javax.swing.ImageIcon;
-
 /**
  * 
  * @author lefeb
  *
  */
+@SuppressWarnings("javadoc")
 public enum Color {
 	/**
 	 * 
